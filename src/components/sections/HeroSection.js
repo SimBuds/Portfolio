@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaCheckCircle } from 'react-icons/fa';
-import heroImage from '../assets/images/hero-image.jpg';
+import heroImage from '../../assets/images/hero-image.jpg';
 import { Link } from 'react-router-dom';
-import '../assets/HeroSection.css';
+import '../../assets/styles/HeroSection.css';
 
 const HeroSection = () => {
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const apiKey = '81f681e98749226b5e049ede58121aa7';
+      const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
       const url = `https://api.openweathermap.org/data/2.5/weather?q=Toronto,CA&units=metric&appid=${apiKey}`;
       try {
         const response = await axios.get(url);

@@ -4,9 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import '../assets/Header.css';
-import favicon from '../assets/images/icon.png';
+import '../../assets/styles/Header.css';
+import favicon from '../../assets/images/icon.png';
 
 const Header = () => {
   return (
@@ -31,9 +30,6 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item>
               <a href={`${process.env.PUBLIC_URL}/resume.pdf`} className="nav-link">Resume</a>
-            </Nav.Item>
-            <Nav.Item>
-              <a href={`${process.env.PUBLIC_URL}/extensions/T-Money-Extension.zip`} download className="nav-link">Download</a>
             </Nav.Item>
             <Nav.Item>
               <HashLink smooth to="/#aboutme" className="nav-link">About Me</HashLink>

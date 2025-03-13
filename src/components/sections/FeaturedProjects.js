@@ -1,9 +1,9 @@
 import React from 'react';
-import '../assets/FeaturedProjects.css';
-import project1Image from '../assets/images/project1.png';
-import project7Image from '../assets/images/project7.png';
-import project3Image from '../assets/images/project3.png';
-import project5Image from '../assets/images/project5.png';
+import '../../assets/styles/FeaturedProjects.css';
+import project1Image from '../../assets/images/project1.png';
+import project7Image from '../../assets/images/project7.png';
+import project3Image from '../../assets/images/project3.png';
+import project5Image from '../../assets/images/project5.png';
 
 const projects = [
   {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/ReachMe.css';
+import '../../assets/styles/ReachMe.css';
 
 const ReachMe = () => {
     return (

@@ -1,5 +1,5 @@
-import React from 'react';
-import '../assets/ProjectList.css';
+import React, { useState } from 'react';
+import '../assets/styles/ProjectList.css';
 import project1Image from '../assets/images/project1.png';
 import project2Image from '../assets/images/project2.png';
 import project3Image from '../assets/images/project3.png';
@@ -69,6 +69,12 @@ const projects = [
 ];
 
 const ProjectList = () => {
+  const [imagesLoaded, setImagesLoaded] = useState({});
+
+  const handleImageLoad = (index) => {
+    setImagesLoaded(prev => ({...prev, [index]: true}));
+  };
+
   return (
     <div className="project-list-wrapper">
       <div className="project-list-header">
@@ -80,7 +86,14 @@ const ProjectList = () => {
           <div className="project-list-card" key={index}>
             <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-list-image-link">
               <div className="project-list-image">
-                <img src={project.image} alt={project.name} />
+                {!imagesLoaded[index] && <div className="image-loading-placeholder">Loading...</div>}
+                <img 
+                  src={project.image} 
+                  alt={project.name} 
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(index)}
+                  style={{opacity: imagesLoaded[index] ? 1 : 0}}
+                />
               </div>
             </a>
             <div className="project-list-content">

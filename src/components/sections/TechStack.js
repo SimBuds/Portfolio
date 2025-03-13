@@ -8,7 +8,7 @@ import {
 } from 'simple-icons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import '../assets/TechStack.css';
+import '../../assets/styles/TechStack.css';
 
 const techCategories = {
   "Programming Languages": [

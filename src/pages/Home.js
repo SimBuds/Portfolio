@@ -1,33 +1,33 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import HeroSection from '../components/HeroSection.js';
-import TechStack from '../components/TechStack.js';
-import FeaturedProjects from '../components/FeaturedProjects.js';
-import AboutMe from '../components/AboutMe.js';
-import ReachMe from '../components/ReachMe.js';
-import PoweredBy from '../components/PoweredBy.js';
+import HeroSection from '../components/sections/HeroSection.js';
+import TechStack from '../components/sections/TechStack.js';
+import FeaturedProjects from '../components/sections/FeaturedProjects.js';
+import AboutMe from '../components/sections/AboutMe.js';
+import ReachMe from '../components/sections/ReachMe.js';
+import PoweredBy from '../components/sections/PoweredBy.js';
 
-import '../assets/Home.css';
+import '../assets/styles/Home.css';
 
 const Home = () => {
   return (
     <Container fluid className="home-layout">
-      <section aria-label="Hero Section">
+      <section id="hero" aria-label="Hero Section">
         <HeroSection />
       </section>
-      <section aria-label="Featured Projects">
+      <section id="projects" aria-label="Featured Projects">
         <FeaturedProjects />
       </section>
-      <section aria-label="Technology Stack">
+      <section id="techstack" aria-label="Technology Stack">
         <TechStack />
       </section>
-      <section aria-label="About Me">
+      <section id="aboutme" aria-label="About Me">
         <AboutMe />
       </section>
-      <section aria-label="Reach Me">
+      <section id="contact" aria-label="Reach Me">
         <ReachMe />
       </section>
-      <section aria-label="Powered By">
+      <section id="powered-by" aria-label="Powered By">
         <PoweredBy />
       </section>
     </Container>
