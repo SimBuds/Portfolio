@@ -101,17 +101,6 @@ function ContactMe() {
         <div className="contact-form">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Your Name (optional):</label>
-              <input
-                type="text"
-                id="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your name"
-              />
-            </div>
-            
-            <div className="form-group">
               <label htmlFor="email">Your Email:</label>
               <input
                 type="email"
