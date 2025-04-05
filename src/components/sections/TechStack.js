@@ -1,10 +1,7 @@
 import React from 'react';
 import {
-  siPython, siJavascript, siCsharp, siPhp, 
-  siAndroid, siOracle, siMysql, siMongodb,
-  siPostgresql, siLinux, siApple, siWindows,
-  siDotnet, siSpringboot, siReact, siAngular,
-  siDocker, siPostman, siGit
+  siPython, siJavascript, siMysql, siMongodb, siPostgresql, siLinux, siApple, 
+  siWindows, siDotnet, siSpringboot, siReact, siDocker, siPostman, siGit
 } from 'simple-icons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -14,16 +11,12 @@ const techCategories = {
   "Programming Languages": [
     { name: 'Java', color: '#f89820', icon: <FontAwesomeIcon icon={faCoffee} /> },
     { name: 'Python', color: '#3776AB', icon: siPython },
-    { name: 'C#', color: '#239120', icon: siCsharp },
-    { name: 'JavaScript', color: '#F7DF1E', icon: siJavascript },
-    { name: 'PHP', color: '#777BB4', icon: siPhp },
-    { name: 'Android', color: '#3DDC84', icon: siAndroid }
+    { name: 'JavaScript', color: '#F7DF1E', icon: siJavascript }
   ],
   "Databases": [
     { name: 'MongoDB', color: '#47A248', icon: siMongodb },
     { name: 'Postgres', color: '#336791', icon: siPostgresql },
-    { name: 'MySQL', color: '#4479A1', icon: siMysql },
-    { name: 'Oracle', color: '#F80000', icon: siOracle }
+    { name: 'MySQL', color: '#4479A1', icon: siMysql }
   ],
   "Operating Systems": [
     { name: 'Linux', color: '#FCC624', icon: siLinux },
@@ -33,8 +26,7 @@ const techCategories = {
   "Frameworks": [
     { name: 'React', color: '#61DAFB', icon: siReact },
     { name: 'Spring', color: '#6DB33F', icon: siSpringboot },
-    { name: 'ASP.NET', color: '#512BD4', icon: siDotnet },
-    { name: 'Angular', color: '#DD0031', icon: siAngular }
+    { name: 'ASP.NET', color: '#512BD4', icon: siDotnet }
   ],
   "Tools": [
     { name: 'Docker', color: '#2496ED', icon: siDocker },

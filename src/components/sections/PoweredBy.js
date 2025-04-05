@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiDigitalocean } from 'react-icons/si';
+import { SiMongodb, SiExpress } from 'react-icons/si';
 import '../../assets/styles/PoweredBy.css';
 
 const PoweredBy = () => {
@@ -24,10 +24,6 @@ const PoweredBy = () => {
           <div className="icon">
             <FaNodeJs />
             <p>Node.js</p>
-          </div>
-          <div className="icon">
-            <SiDigitalocean />
-            <p>DigitalOcean</p>
           </div>
         </div>
       </div>

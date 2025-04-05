@@ -82,25 +82,16 @@
 }
 
 @media (max-width: 768px) {
+
   .tech-stack p {
     text-align: center;
+    font-size: 0.9rem; /* Adjusted font size for mobile */
+    margin: 0 20px; /* Added margin for better spacing */
   }
 
   .category-row {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 5px; /* Reduced margin-bottom for less space between rows */
-  }
-
-  .category {
-    margin-bottom: 5px; /* Reduced margin-bottom for less space between categories */
-  }
-
-  .tech-item {
-    width: 80px; /* Adjust width for better fit on mobile */
-    height: 80px; /* Adjust height for better fit on mobile */
-    padding: 10px; /* Adjust padding for better spacing */
-    margin: 5px; /* Add margin for spacing around tech items */
   }
 
   .tech-item svg {
@@ -108,7 +99,13 @@
     height: 35px; /* Adjust icon size for better fit on mobile */
   }
 
+  .tech-item {
+    width: 70px; /* Adjusted width for mobile */
+    height: 70px; /* Adjusted height for mobile */
+    margin-bottom: 5px;
+  }
+
   .tech-item p {
-    font-size: 0.7rem; /* Adjust font size for better readability */
+    font-size: 0.7rem; /* Adjusted font size for mobile */
   }
 }
