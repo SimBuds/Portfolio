@@ -9,10 +9,10 @@ const HeroSection = () => {
     <div className="hero-section container">
       <div className="row align-items-center">
         <div className="col-md-6 hero-text">
-          <h1>Future Full Stack Developer</h1>
+          <h1>Software Developer</h1>
           <p className="lead">
-            Hi, I'm Casey Hsu and my current goal is to become a junior developer that will work with a team to build 
-            and manage applications. I recently graduated from George Brown College with honours in Computer Programming and Analysis.
+          Hi, I'm Casey Hsu and my current goal is to become a junior developer who will work with a team to build and 
+          manage applications. I recently graduated from George Brown College with honors in Computer Programming and Analysis.
           </p>
           <div className="availability">
             <p>

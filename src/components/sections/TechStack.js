@@ -9,9 +9,9 @@ import '../../assets/styles/TechStack.css';
 
 const techCategories = {
   "Programming Languages": [
+    { name: 'JavaScript', color: '#F7DF1E', icon: siJavascript },
     { name: 'Java', color: '#f89820', icon: <FontAwesomeIcon icon={faCoffee} /> },
-    { name: 'Python', color: '#3776AB', icon: siPython },
-    { name: 'JavaScript', color: '#F7DF1E', icon: siJavascript }
+    { name: 'Python', color: '#3776AB', icon: siPython }
   ],
   "Databases": [
     { name: 'MongoDB', color: '#47A248', icon: siMongodb },
@@ -29,9 +29,9 @@ const techCategories = {
     { name: 'ASP.NET', color: '#512BD4', icon: siDotnet }
   ],
   "Tools": [
+    { name: 'Git', color: '#F05032', icon: siGit },
     { name: 'Docker', color: '#2496ED', icon: siDocker },
-    { name: 'Postman', color: '#FF6C37', icon: siPostman },
-    { name: 'Git', color: '#F05032', icon: siGit }
+    { name: 'Postman', color: '#FF6C37', icon: siPostman }
   ]
 };
 
