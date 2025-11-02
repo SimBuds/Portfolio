@@ -1,11 +1,10 @@
-import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../../assets/styles/Header.css';
-import favicon from '../../assets/images/icon.png';
+import favicon from '../../assets/images/nav-image.jpg';
 
 const Header = () => {
   return (
@@ -48,7 +47,7 @@ const Header = () => {
                 </a>
               </Nav.Item>
               <Nav.Item>
-                <a href="https://www.linkedin.com/in/casey-hsu-750b39273" target="_blank" rel="noopener noreferrer" className="nav-link">
+                <a href="https://www.linkedin.com/in/casey-hsu/" target="_blank" rel="noopener noreferrer" className="nav-link">
                   <FontAwesomeIcon icon={faLinkedinIn} />
                 </a>
               </Nav.Item>

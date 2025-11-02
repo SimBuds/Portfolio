@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../assets/styles/FeaturedProjects.css';
 import project1Image from '../../assets/images/project1.png';
 import project7Image from '../../assets/images/project7.png';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container } from 'react-bootstrap';
 import HeroSection from '../components/sections/HeroSection.js';
 import TechStack from '../components/sections/TechStack.js';

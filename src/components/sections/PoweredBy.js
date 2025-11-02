@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiMongodb, SiDigitalocean } from 'react-icons/si';
 import '../../assets/styles/PoweredBy.css';
