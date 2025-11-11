@@ -28,7 +28,7 @@ const Header = () => {
               <HashLink smooth to="/projectlist" className="nav-link">Projects</HashLink>
             </Nav.Item>
             <Nav.Item>
-              <a href={`${process.env.PUBLIC_URL}/resume.pdf`} className="nav-link">Resume</a>
+              <a href={`${process.env.PUBLIC_URL}/resume.pdf`} target="_blank" rel="noopener noreferrer" className="nav-link">Resume</a>
             </Nav.Item>
             <Nav.Item>
               <HashLink smooth to="/#aboutme" className="nav-link">About Me</HashLink>
