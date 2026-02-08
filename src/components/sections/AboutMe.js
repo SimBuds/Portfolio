@@ -12,7 +12,11 @@ const AboutMe = () => {
               transitioning from my nine-year career as a professional chef.
             </p>
             <p>My interest in technology began at the age of eight when I built my first computer, and I have been deeply enthusiastic about the field ever since.</p>
+<<<<<<< HEAD
             <p>I'm <strong>open to job opportunities</strong> where I can contribute, learn, and grow. If you have a suitable opportunity that aligns with my skills, please feel free to contact me.</p>
+=======
+            <p>I'm <strong>open to job opportunities</strong> where I can contribute, learn, and grow. If you have a suitable opportunity that aligns with my skills, please feel free to reach me @ <a href="mailto:casey-hsu@outlook.com">casey-hsu@outlook.com</a></p>
+>>>>>>> b0db196 (Initial portfolio setup)
           </div>
           <div className="col-md-4 about-image">
             <img src={aboutImage} alt="Casey Hsu" className="img-fluid"/>

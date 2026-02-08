@@ -19,7 +19,11 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="footer-text">
+<<<<<<< HEAD
                     <p>©2025 Casey Hsu. All rights reserved.</p>
+=======
+                    <p>©2026 Casey Hsu. All rights reserved.</p>
+>>>>>>> b0db196 (Initial portfolio setup)
                 </div>
             </Container>
         </footer>

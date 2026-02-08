@@ -1,7 +1,12 @@
 import React from 'react';
 import {
+<<<<<<< HEAD
   siPython, siJavascript, siMysql, siMongodb, siPostgresql, siLinux, siApple, 
   siWindows, siDotnet, siSpringboot, siReact, siDocker, siPostman, siGit
+=======
+  siPython, siJavascript, siMysql, siMongodb, siPostgresql, siLinux, siApple,
+  siWindows, siWordpress, siSpringboot, siReact, siDocker, siPostman, siGit
+>>>>>>> b0db196 (Initial portfolio setup)
 } from 'simple-icons/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
@@ -26,7 +31,11 @@ const techCategories = {
   "Frameworks": [
     { name: 'React', color: '#61DAFB', icon: siReact },
     { name: 'Spring', color: '#6DB33F', icon: siSpringboot },
+<<<<<<< HEAD
     { name: 'ASP.NET', color: '#512BD4', icon: siDotnet }
+=======
+    { name: 'WordPress', color: '#21759B', icon: siWordpress }
+>>>>>>> b0db196 (Initial portfolio setup)
   ],
   "Tools": [
     { name: 'Git', color: '#F05032', icon: siGit },
@@ -35,11 +44,42 @@ const techCategories = {
   ]
 };
 
+<<<<<<< HEAD
+=======
+const layout = [
+  ['Operating Systems', 'Programming Languages', 'Tools'],
+  ['Databases', 'Frameworks'],
+];
+
+const renderIcon = (icon, name) => {
+  if (React.isValidElement(icon)) {
+    return (
+      <span className="tech-icon" aria-hidden="true">
+        {icon}
+      </span>
+    );
+  }
+
+  return (
+    <svg
+      className="tech-icon"
+      viewBox="0 0 24 24"
+      role="img"
+      aria-label={`${name} icon`}
+      focusable="false"
+    >
+      <path d={icon.path} />
+    </svg>
+  );
+};
+
+>>>>>>> b0db196 (Initial portfolio setup)
 function TechStack() {
   return (
     <div className="tech-stack">
       <h2>MY TECH STACK</h2>
       <p>Check out my tech stack, to see which tools and languages I'm most comfortable with.</p>
+<<<<<<< HEAD
       <div className="category-row">
         {['Operating Systems', 'Programming Languages', 'Tools'].map(category => (
           <div className="category" key={category}>
@@ -78,6 +118,30 @@ function TechStack() {
           </div>
         ))}
       </div>
+=======
+
+      {layout.map((row, idx) => (
+        <div className="category-row" key={idx}>
+          {row.map(category => (
+            <div className="category" key={category}>
+              <h3>{category}</h3>
+              <div className="tech-items">
+                {techCategories[category].map(tech => (
+                  <div
+                    className="tech-item"
+                    key={tech.name}
+                    style={{ backgroundColor: tech.color }}
+                  >
+                    {renderIcon(tech.icon, tech.name)}
+                    <p>{tech.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+>>>>>>> b0db196 (Initial portfolio setup)
     </div>
   );
 }

@@ -3,7 +3,10 @@ import HeroSection from '../components/sections/HeroSection.js';
 import TechStack from '../components/sections/TechStack.js';
 import FeaturedProjects from '../components/sections/FeaturedProjects.js';
 import AboutMe from '../components/sections/AboutMe.js';
+<<<<<<< HEAD
 import ReachMe from '../components/sections/ReachMe.js';
+=======
+>>>>>>> b0db196 (Initial portfolio setup)
 import PoweredBy from '../components/sections/PoweredBy.js';
 
 import '../assets/styles/Home.css';
@@ -23,9 +26,12 @@ const Home = () => {
       <section id="aboutme" aria-label="About Me">
         <AboutMe />
       </section>
+<<<<<<< HEAD
       <section id="contact" aria-label="Reach Me">
         <ReachMe />
       </section>
+=======
+>>>>>>> b0db196 (Initial portfolio setup)
       <section id="powered-by" aria-label="Powered By">
         <PoweredBy />
       </section>

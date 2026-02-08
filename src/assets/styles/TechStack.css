@@ -81,6 +81,25 @@
   margin: 0;
 }
 
+<<<<<<< HEAD
+=======
+.tech-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+}
+
+.tech-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.tech-item svg path {
+  fill: currentColor;
+}
+
+
+>>>>>>> b0db196 (Initial portfolio setup)
 @media (max-width: 768px) {
 
   .tech-stack p {
