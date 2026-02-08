@@ -3,20 +3,10 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import Home from './pages/Home';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-<<<<<<< HEAD
-import AboutMe from './components/sections/AboutMe';
-import Projects from './components/sections/FeaturedProjects';
 import './assets/styles/App.css';
 
 const ProjectListLazy = lazy(() => import('./pages/ProjectList'));
-const ContactMeLazy = lazy(() => import('./pages/ContactMe'));
-=======
-import './assets/styles/App.css';
 
-const ProjectListLazy = lazy(() => import('./pages/ProjectList'));
->>>>>>> b0db196 (Initial portfolio setup)
-
-// Scroll to hash component
 function ScrollToHash() {
   const location = useLocation();
   
@@ -43,15 +33,8 @@ function App() {
       <Suspense fallback={<div className="loading-container">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
-<<<<<<< HEAD
-          <Route path="/#aboutme" component={AboutMe} />
-          <Route path="/#projects" component={Projects} />
-          <Route path="/contactme" element={<ContactMeLazy />} />
-          <Route path="/projectlist" element={<ProjectListLazy />} />
-=======
           <Route path="/projectlist" element={<ProjectListLazy />} />
           <Route path="*" element={<Home />} />
->>>>>>> b0db196 (Initial portfolio setup)
         </Routes>
       </Suspense>
       <Footer />

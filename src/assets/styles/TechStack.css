@@ -81,8 +81,6 @@
   margin: 0;
 }
 
-<<<<<<< HEAD
-=======
 .tech-icon {
   width: 28px;
   height: 28px;
@@ -99,7 +97,6 @@
 }
 
 
->>>>>>> b0db196 (Initial portfolio setup)
 @media (max-width: 768px) {
 
   .tech-stack p {
