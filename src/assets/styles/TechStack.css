@@ -2,7 +2,6 @@
   max-width: 1000px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #0A0A0A;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   color: #fff;
 }
@@ -28,18 +27,18 @@
 .category-row {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 40px; /* Increased margin-bottom for more space between rows */
+  margin-bottom: 20px;
 }
 
 .category {
   flex: 1;
-  margin: 0 20px; /* Increased margin for more space between categories */
+  margin: 0 20px;
 }
 
 .category h3 {
   font-size: 1rem;
   margin-top: 50px;
-  margin-bottom: 10px; /* Increased margin-bottom for more space below the heading */
+  margin-bottom: 10px;
   color: #61DAFB;
   text-align: center;
 }
@@ -48,7 +47,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Increased gap for more space between tech items */
+  gap: 15px;
 }
 
 .tech-item {
@@ -56,53 +55,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px; /* Increased padding for larger touch areas */
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   color: #000000;
   border-radius: 10px;
   transition: transform 0.3s;
-  width: 90px; /* Increased width */
-  height: 90px; /* Increased height */
+  width: 90px;
+  height: 90px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-.tech-item:hover {
-  transform: scale(1.05);
-}
-
-.tech-item svg {
-  width: 40px; /* Increased icon size */
-  height: 40px; /* Increased icon size */
-  margin-bottom: 10px; /* Increased margin-bottom for more space between icon and text */
-}
-
-.tech-item p {
-  font-size: 0.8rem; /* Increased font size */
-  margin: 0;
-}
-
-.tech-icon {
-  width: 28px;
-  height: 28px;
-  display: inline-block;
-}
-
-.tech-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-.tech-item svg path {
-  fill: currentColor;
-}
-
 
 @media (max-width: 768px) {
 
   .tech-stack p {
     text-align: center;
-    font-size: 0.9rem; /* Adjusted font size for mobile */
-    margin: 0 20px; /* Added margin for better spacing */
+    font-size: 0.9rem;
+    margin: 0 20px;
   }
 
   .category-row {
@@ -111,8 +79,8 @@
   }
 
   .tech-item svg {
-    width: 35px; /* Adjust icon size for better fit on mobile */
-    height: 35px; /* Adjust icon size for better fit on mobile */
+    width: 35px;
+    height: 35px;
   }
 
   .tech-item {
