@@ -14,17 +14,18 @@ siPostman,
 siPython,
 siReact,
 siSpringboot,
-siWordpress
+siWordpress,
+siSharp
 } from 'simple-icons';
 import '../../assets/styles/TechStack.css';
 
 type TechItem = { name: string; color: string; icon: SimpleIcon | null };
 
-// build categories and layout exactly like react version
 const techCategories: Record<string, TechItem[]> = {
   'Programming Languages': [
     { name: 'JavaScript', color: '#F7DF1E', icon: siJavascript },
-    { name: 'Python', color: '#3776AB', icon: siPython }
+    { name: 'Python', color: '#3776AB', icon: siPython },
+    { name: 'C#', color: '#239120', icon: siSharp }
   ],
   Databases: [
     { name: 'MongoDB', color: '#47A248', icon: siMongodb },

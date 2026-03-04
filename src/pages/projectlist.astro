@@ -1,8 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import '../assets/styles/ProjectList.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 
 import project1Image from '../assets/images/project1.png';
@@ -75,7 +73,7 @@ const projects = [
 ---
 
 <Layout>
-  <Header />
+  
   <div class="project-list-wrapper">
     <div class="project-list-header">
       <h2>ALL PROJECTS</h2>
@@ -107,5 +105,5 @@ const projects = [
       ))}
     </div>
   </div>
-  <Footer />
+  
 </Layout>

@@ -1,6 +1,8 @@
 ---
-import '../assets/styles/theme.css';
 import '../assets/styles/App.css';
+import '../assets/styles/theme.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 ---
 
 <!doctype html>
@@ -15,6 +17,10 @@ import '../assets/styles/App.css';
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<div class="container">
+			<slot />
+		</div>
+		<Footer />
 	</body>
 </html>

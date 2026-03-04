@@ -3,16 +3,16 @@
 .contact-page {
   width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: auto;
   margin-top: var(--spacing-xl);
-  padding: var(--spacing-4xl) var(--section-horizontal-padding) var(--spacing-4xl);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-2xl) var(--section-horizontal-padding) var(--spacing-2xl);
 }
 
 .contact-page h1 {
   font-size: var(--font-size-3xl);
   font-weight: 700;
   text-align: center;
-  margin-bottom: var(--spacing-3xl);
   color: var(--color-primary);
 }
 

@@ -1,15 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import AboutMe from '../components/sections/AboutMe.astro';
 import '../assets/styles/ContactMe.css';
+import WhatImUpToNow from '../components/sections/WhatImUpToNow.astro';
 
 // form logic will be handled with a small script
 ---
 
 <Layout>
-  <Header />
   <div class="contact-page">
     <h1>Feel free to reach out!</h1>
     <div id="status-messages"></div>
@@ -30,7 +27,7 @@ import '../assets/styles/ContactMe.css';
     </div>
   </div>
 
-  <AboutMe />
+  <WhatImUpToNow />
 
   <script type="module" is:inline>
     const form = document.getElementById('contact-form');
@@ -88,5 +85,4 @@ import '../assets/styles/ContactMe.css';
       setTimeout(() => statusEl.textContent = '', 5000);
     });
   </script>
-  <Footer />
 </Layout>
