@@ -1,0 +1,120 @@
+/* WhatImUpToNow.css - Blog-style freelance updates section */
+
+.now-section-wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.now-section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.now-section-header h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
+}
+
+.now-section-header p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.now-entries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.now-entry {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  transition: all var(--transition-base);
+}
+
+.now-entry:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.now-entry-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.now-entry-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.now-entry-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.now-entry h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.now-entry-body p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.now-entry-body p:last-child {
+  margin-bottom: 0;
+}
+
+.now-entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.now-tag {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-light);
+}
+
+@media (max-width: 768px) {
+  .now-section-header h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .now-entry {
+    padding: var(--spacing-lg);
+  }
+
+  .now-entry h3 {
+    font-size: var(--font-size-lg);
+  }
+}

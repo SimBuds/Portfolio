@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../assets/styles/App.css';
+import AboutMe from '../components/sections/AboutMe.astro';
 import '../assets/styles/ContactMe.css';
 
 // form logic will be handled with a small script
@@ -29,6 +29,8 @@ import '../assets/styles/ContactMe.css';
       </form>
     </div>
   </div>
+
+  <AboutMe />
 
   <script type="module" is:inline>
     const form = document.getElementById('contact-form');

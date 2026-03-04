@@ -1,0 +1,70 @@
+---
+import '../../assets/styles/WhatImUpToNow.css';
+
+const entries = [
+  {
+    platform: 'WordPress',
+    badge: 'Freelance',
+    date: 'Ongoing since 2024',
+    title: 'Building Custom WordPress Solutions for Small Businesses',
+    body: [
+      `Since graduating from George Brown College, I've been working with small business clients to design and develop custom WordPress sites that actually perform. This includes building child themes from scratch, integrating WooCommerce for e-commerce storefronts, and optimizing page speed scores to keep load times under two seconds.`,
+      `A big part of this work involves translating client requirements into maintainable, extensible themes using ACF (Advanced Custom Fields) and custom post types — giving non-technical clients a clean editing experience while keeping the codebase organized for future developers.`,
+    ],
+    tags: ['WordPress', 'PHP', 'WooCommerce', 'ACF', 'Theme Development', 'SEO'],
+  },
+  {
+    platform: 'Shopify',
+    badge: 'Freelance',
+    date: 'Ongoing since 2024',
+    title: 'Crafting Shopify Storefronts & Liquid Customizations',
+    body: [
+      `On the Shopify side, I've been helping direct-to-consumer brands launch and refine their online stores. My work ranges from customizing existing themes with Liquid templating to building entirely new sections, collection filters, and dynamic product pages that improve the shopping experience.`,
+      `I also handle integrations with third-party apps for email marketing, reviews, and inventory management, ensuring everything runs smoothly from storefront to checkout. Performance, accessibility, and mobile responsiveness are always top priorities in every build.`,
+    ],
+    tags: ['Shopify', 'Liquid', 'Theme Customization', 'E-Commerce', 'JavaScript'],
+  },
+  {
+    platform: 'HubSpot',
+    badge: 'Freelance',
+    date: 'Ongoing since 2025',
+    title: 'HubSpot CMS Development & Marketing Automation',
+    body: [
+      `More recently, I've started taking on HubSpot CMS projects — building custom landing pages, blog templates, and email templates using the HubL templating language. The goal is always to give marketing teams flexible, drag-and-drop modules while maintaining brand consistency and fast page loads.`,
+      `Beyond the CMS, I've been helping clients configure workflows and automation sequences in HubSpot's CRM tools, connecting forms and lead capture to automated nurture campaigns. It's been a great way to bridge front-end development with real business outcomes.`,
+    ],
+    tags: ['HubSpot', 'HubL', 'CMS', 'CRM', 'Marketing Automation', 'Email Templates'],
+  },
+];
+---
+
+<div class="now-section-wrapper">
+  <div class="now-section-header">
+    <h2>WHAT I'M UP TO NOW</h2>
+    <p>
+      Since graduating, I've been freelancing across several platforms — here's a look at the kind of work
+      I've been doing and the tools I'm using day to day.
+    </p>
+  </div>
+  <div class="now-entries">
+    {entries.map((entry) => (
+      <article class="now-entry">
+        <div class="now-entry-meta">
+          <span class="now-entry-badge">{entry.badge}</span>
+          <span class="now-entry-date">{entry.date}</span>
+        </div>
+        <h3>{entry.title}</h3>
+        <div class="now-entry-body">
+          {entry.body.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+        <div class="now-entry-tags">
+          {entry.tags.map((tag) => (
+            <span class="now-tag">{tag}</span>
+          ))}
+        </div>
+      </article>
+    ))}
+  </div>
+</div>
