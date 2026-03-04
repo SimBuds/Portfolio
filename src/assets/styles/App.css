@@ -1,15 +1,30 @@
-/* App.css */
+/* App.css - Main layout styles */
 
-html, body, #root {
-  min-height: 100%;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: black;
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
+main {
+  flex: 1;
+}
+
+/* Section styling is defined in theme.css, override here for spacing */
+section {
+  width: 100%;
+  padding: var(--spacing-3xl) var(--padding-mobile);
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: var(--spacing-3xl) var(--padding-desktop);
+  }
+}
+
+/* Ensure all section content respects max-width */
+section > * {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }

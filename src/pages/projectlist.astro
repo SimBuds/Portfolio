@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
+---
+import { Image } from 'astro:assets';
+import '../assets/styles/App.css';
 import '../assets/styles/ProjectList.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+
 import project1Image from '../assets/images/project1.png';
 import project2Image from '../assets/images/project2.png';
 import project3Image from '../assets/images/project3.png';
@@ -67,54 +73,40 @@ const projects = [
     link: 'https://github.com/SimBuds/Employee-Management-System-MERN'
   }
 ];
+---
 
-const ProjectList = () => {
-  const [imagesLoaded, setImagesLoaded] = useState({});
-
-  const handleImageLoad = (index) => {
-    setImagesLoaded(prev => ({...prev, [index]: true}));
-  };
-
-  return (
-    <div className="project-list-wrapper">
-      <div className="project-list-header">
-        <h2>ALL PROJECTS</h2>
-        <p>Here you can find the list of all my projects. Feel free to explore and see what I have been working on.</p>
-      </div>
-      <div className="project-list">
-        {projects.map((project, index) => (
-          <div className="project-list-card" key={index}>
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-list-image-link">
-              <div className="project-list-image">
-                {!imagesLoaded[index] && <div className="image-loading-placeholder">Loading...</div>}
-                <img 
-                  src={project.image} 
-                  alt={project.name} 
-                  loading="lazy"
-                  onLoad={() => handleImageLoad(index)}
-                  style={{opacity: imagesLoaded[index] ? 1 : 0}}
-                />
-              </div>
-            </a>
-            <div className="project-list-content">
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-list-title-link">
-                <h3>{project.name}</h3>
-              </a>
-              <p>{project.description}</p>
-              <div className="project-list-technologies">
-                {project.tags.map(tag => (
-                  <span key={tag} className="project-list-tag">{tag}</span>
-                ))}
-              </div>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-list-link">
-                Visit Repo
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
+<Layout>
+  <Header />
+  <div class="project-list-wrapper">
+    <div class="project-list-header">
+      <h2>ALL PROJECTS</h2>
+      <p>Here you can find the list of all my projects. Feel free to explore and see what I have been working on.</p>
     </div>
-  );
-};
-
-export default ProjectList;
+    <div class="project-list">
+      {projects.map((project) => (
+        <div class="project-list-card">
+          <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-list-image-link">
+            <div class="project-list-image">
+              <Image src={project.image} alt={project.name} loading="lazy" />
+            </div>
+          </a>
+          <div class="project-list-content">
+            <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-list-title-link">
+              <h3>{project.name}</h3>
+            </a>
+            <p>{project.description}</p>
+            <div class="project-list-technologies">
+              {project.tags.map(tag => (
+                <span class="project-list-tag">{tag}</span>
+              ))}
+            </div>
+            <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-list-link">
+              Visit Repo
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  <Footer />
+</Layout>

@@ -1,43 +1,59 @@
-/* ReachMe.css */
+/* ReachMe.css - Call to action section */
 
 .reach-me {
-  color: #fff;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   text-align: center;
-  padding: 40px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: var(--spacing-lg) var(--section-horizontal-padding) var(--spacing-md);
 }
 
 .reach-me h1 {
-  font-size: 2rem;
-  color: #FF474C;
-  margin-bottom: 20px;
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
 }
 
 .reach-me p {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.reach-me-button {
-  background-color: #FF474C;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
+.reach-me-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
   text-transform: uppercase;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease-in-out;
-  font-weight: bold;
+  letter-spacing: 0.08em;
   text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    background var(--transition-base), border-color var(--transition-base);
 }
 
-.reach-me-button:hover {
-  background-color: #fff;
-  color: #FF474C !important;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
+.reach-me-cta:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary-dark);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.75);
+}
+
+@media (max-width: 768px) {
+  .reach-me h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .reach-me p {
+    font-size: var(--font-size-base);
+  }
 }

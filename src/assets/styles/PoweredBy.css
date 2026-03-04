@@ -1,64 +1,93 @@
-/* PoweredBy.css */
+/* PoweredBy.css - Powered by section */
 
 .powered-by-section {
-color: white;
-background: #121212;
-margin: 0 auto;
-padding: 2rem;
-text-align: center;
-}
-
-.container {
-max-width: 1140px;
-margin: 0 auto;
-padding: 0 15px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
 }
 
 .powered-by-text {
-font-size: 1.5rem;
-color: #FF474C;
-margin-bottom: 1rem;
-display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
 }
 
 .tech-icons {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 100%;
+  max-width: 500px;
 }
 
 .icon {
-display: flex;
-flex-direction: column;
-align-items: center;
-font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.icon:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  background-color: var(--color-accent-light);
+}
+
+.icon i {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary);
+  transition: color var(--transition-base);
+}
+
+.icon:hover i {
+  color: var(--color-primary-light);
 }
 
 .icon p {
-margin-top: 0.5rem;
-font-size: 1.2rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.icon:hover p {
+  color: var(--color-primary-light);
+}
+
+@media (max-width: 1024px) {
+  .tech-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-.powered-by-section {
-    padding: 1rem;
-}
+  .powered-by-section {
+    max-width: 100%;
+  }
 
-.powered-by-text {
-    font-size: 1.2rem;
-}
+  .tech-icons {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    max-width: 100%;
+  }
 
-.tech-icons {
-    gap: 0.5rem;
-}
+  .icon {
+    padding: var(--spacing-xs);
+  }
 
-.icon {
-    font-size: 2rem;
-}
+  .icon i {
+    font-size: var(--font-size-2xl);
+  }
 
-.icon p {
-    font-size: 0.9rem;
-}
+  .icon p {
+    font-size: var(--font-size-xs);
+  }
 }  

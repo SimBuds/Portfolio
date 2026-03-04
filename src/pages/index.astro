@@ -1,0 +1,38 @@
+---
+import '../assets/styles/App.css';
+import '../assets/styles/index.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import AboutMe from '../components/sections/AboutMe.astro';
+import FeaturedProjects from '../components/sections/FeaturedProjects.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import PoweredBy from '../components/sections/PoweredBy.astro';
+import ReachMe from '../components/sections/ReachMe.astro';
+import TechStack from '../components/sections/TechStack.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <Header />
+  <main class="home-layout">
+    <section id="hero" aria-label="Hero Section">
+      <HeroSection />
+    </section>
+    <section id="projects" aria-label="Featured Projects">
+      <FeaturedProjects />
+    </section>
+    <section id="techstack" aria-label="Technology Stack">
+      <TechStack />
+    </section>
+    <section id="aboutme" aria-label="About Me">
+      <AboutMe />
+    </section>
+    <section id="reachme" aria-label="Reach Me">
+      <ReachMe />
+    </section>
+    <section id="powered-by" aria-label="Powered By">
+      <PoweredBy />
+    </section>
+  </main>
+  <Footer />
+</Layout>

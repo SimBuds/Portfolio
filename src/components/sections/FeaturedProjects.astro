@@ -1,8 +1,10 @@
-import '../../assets/styles/FeaturedProjects.css';
+---
+import { Image } from 'astro:assets';
 import project1Image from '../../assets/images/project1.png';
-import project7Image from '../../assets/images/project7.png';
 import project3Image from '../../assets/images/project3.png';
 import project5Image from '../../assets/images/project5.png';
+import project7Image from '../../assets/images/project7.png';
+import '../../assets/styles/FeaturedProjects.css';
 
 const projects = [
   {
@@ -34,41 +36,36 @@ const projects = [
     link: 'https://github.com/SimBuds/Flight-System-Using-CRUD-and-C-'
   },
 ];
+---
 
-const FeaturedProjects = () => {
-  return (
-    <div className="featured-projects-wrapper">
-      <div className="project-header" id="projects">
-        <h2>FEATURED PROJECTS</h2>
-        <p>Explore my portfolio, showcasing some of my most intriguing and innovative projects.</p>
-      </div>
-      <div className="featured-projects">
-        {projects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-image-link">
-              <div className="project-image">
-                <img src={project.image} alt={project.name} />
-              </div>
-            </a>
-            <div className="project-content">
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-title-link">
-                <h3>{project.name}</h3>
-              </a>
-              <p>{project.description}</p>
-              <div className="project-technologies">
-                {project.tags.map(tag => (
-                  <span key={tag} className="tag">{tag}</span>
-                ))}
-              </div>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                Visit Repo
-              </a>
-            </div>
+<div class="featured-projects-wrapper">
+  <div class="project-header" id="projects">
+    <h2>FEATURED PROJECTS</h2>
+    <p>Explore my portfolio, showcasing some of my most intriguing and innovative projects.</p>
+  </div>
+  <div class="featured-projects">
+    {projects.map((project) => (
+      <div class="project-card">
+        <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-image-link">
+          <div class="project-image">
+              <Image src={project.image} alt={project.name} />
           </div>
-        ))}
+        </a>
+        <div class="project-content">
+          <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-title-link">
+            <h3>{project.name}</h3>
+          </a>
+          <p>{project.description}</p>
+          <div class="project-technologies">
+            {project.tags.map(tag => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+          <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link">
+            Visit Repo
+          </a>
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default FeaturedProjects;
+    ))}
+  </div>
+</div>

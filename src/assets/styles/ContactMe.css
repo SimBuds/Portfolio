@@ -1,71 +1,143 @@
-/* ContactMe.css */
+/* ContactMe.css - Contact page */
 
 .contact-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    padding: 20px;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-4xl) var(--section-horizontal-padding) 0;
+}
+
+.contact-page h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  color: var(--color-primary);
+}
+
+#status-messages {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  min-height: 1.5rem;
+  font-size: var(--font-size-base);
+}
+
+.success-message {
+  padding: var(--spacing-md);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-primary-light);
+  font-weight: 500;
+}
+
+.error-message {
+  padding: var(--spacing-md);
+  background: rgba(219, 39, 119, 0.1);
+  border: 1px solid #db2777;
+  border-radius: var(--radius-md);
+  color: #ff69b4;
+  font-weight: 500;
 }
 
 .contact-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  box-shadow: none;
 }
 
-.contact-form h1 {
-    text-align: center;
-    margin-bottom: 30px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 15px 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #555;
-    background: #222;
-    color: #ccc;
-    border-radius: 5px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
-.contact-form label {
-    font-weight: bold;
-    color: #aaa;
-    display: block;
-    margin-bottom: 5px;
+label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
 }
 
-.contact-form .send-button {
-    width: 100%;
-    padding: 12px 20px;
-    background-color: #5c67f2;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+input,
+textarea {
+  padding: var(--spacing-md);
+  background-color: var(--color-accent-light);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary), var(--font-fallback);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
 }
 
-.contact-form .send-button:hover,
-.contact-form .send-button:focus {
-    background-color: #4a54e1;
-    transform: scale(1.05);
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: var(--color-accent);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.error-input {
+  border-color: #db2777 !important;
+  background-color: rgba(219, 39, 119, 0.05) !important;
+}
+
+.error-text {
+  color: #ff69b4;
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.send-button {
+  align-self: center;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    background var(--transition-base), opacity var(--transition-base);
+}
+
+.send-button:hover:not(:disabled) {
+  opacity: 0.95;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.75);
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {
-    .contact-form {
-        margin: 10px;
-        padding: 15px;
-    }
+  .contact-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
 }
