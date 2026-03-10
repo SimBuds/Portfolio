@@ -62,19 +62,12 @@
   color: var(--color-primary-light);
 }
 
-@media (max-width: 1024px) {
-  .tech-icons {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .powered-by-section {
     max-width: 100%;
   }
 
   .tech-icons {
-    grid-template-columns: 1fr;
     gap: var(--spacing-md);
     max-width: 100%;
   }
@@ -90,4 +83,4 @@
   .icon p {
     font-size: var(--font-size-xs);
   }
-}  
+}

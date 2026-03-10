@@ -2,7 +2,7 @@
 
 .footer {
   width: 100%;
-  background-color: #000000;
+  background-color: var(--color-bg-black);
   border-top: 2px solid var(--color-border);
   padding: var(--spacing-md) var(--padding-mobile);
   text-align: center;
@@ -19,7 +19,7 @@
 }
 
 .footer-socials a {
-  color: #ffffff;
+  color: var(--color-text-primary);
   font-size: var(--font-size-xl);
   transition: color var(--transition-base);
   display: inline-flex;
@@ -39,7 +39,7 @@
 .footer-text p {
   margin: var(--spacing-sm) 0;
   font-size: var(--font-size-sm);
-  color: #ffffff;
+  color: var(--color-text-primary);
 }
 
 @media (max-width: 768px) {

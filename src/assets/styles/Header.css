@@ -2,7 +2,7 @@
 
 .navbar {
   width: 100%;
-  background-color: #000000;
+  background-color: var(--color-bg-black);
   border-bottom: 2px solid var(--color-border);
   padding: var(--spacing-sm) 0; /* horizontal padding moved to inner wrapper */
   position: sticky;
@@ -33,7 +33,7 @@
   align-items: center;
   gap: var(--spacing-md);
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-text-primary);
   transition: color var(--transition-base);
 }
 
@@ -58,7 +58,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: var(--font-size-lg);
-  color: #ffffff;
+  color: var(--color-text-primary);
   font-family: var(--font-primary), var(--font-fallback);
 }
 
@@ -86,7 +86,7 @@
 
 .nav-link,
 .nav-item a {
-  color: #ffffff;
+  color: var(--color-text-primary);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
@@ -99,11 +99,19 @@
   color: var(--color-primary-light);
 }
 
+.nav-link:focus-visible,
+.nav-item a:focus-visible {
+  color: var(--color-primary-light);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
 .navbar-toggler {
   display: none;
   background: none;
   border: none;
-  color: #ffffff;
+  color: var(--color-text-primary);
   font-size: var(--font-size-xl);
   cursor: pointer;
 }
@@ -114,8 +122,6 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: stretch;
     padding: var(--spacing-xs) 0;
   }
 
@@ -128,6 +134,7 @@
 
   .navbar-top {
     justify-content: space-between;
+    align-items: center;
   }
 
   .navbar-collapse {
@@ -138,7 +145,7 @@
     margin-top: var(--spacing-xs);
     padding-top: var(--spacing-xs);
     border-top: 1px solid var(--color-border);
-    justify-content: flex-start;
+    align-items: center;
   }
 
   .nav-toggle:checked ~ .navbar-collapse,
@@ -149,13 +156,14 @@
   .navbar-center,
   .navbar-social {
     flex-direction: column;
+    align-items: center;
     gap: var(--spacing-md);
     width: 100%;
   }
 
   .nav-link,
   .nav-item a {
-    font-size: calc(var(--font-size-sm) * 0.8);
+    font-size: var(--font-size-sm);
   }
 
   .navbar-toggler {

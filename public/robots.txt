@@ -1,5 +1,5 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://caseyhsu.com/sitemap.xml
 

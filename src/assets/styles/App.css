@@ -9,22 +9,3 @@ body {
 main {
   flex: 1;
 }
-
-/* Section styling is defined in theme.css, override here for spacing */
-section {
-  width: 100%;
-  padding: var(--spacing-3xl) var(--padding-mobile);
-}
-
-@media (min-width: 768px) {
-  section {
-    padding: var(--spacing-3xl) var(--padding-desktop);
-  }
-}
-
-/* Ensure all section content respects max-width */
-section > * {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}

@@ -49,10 +49,6 @@ const techCategories: Record<string, TechItem[]> = {
   ]
 };
 
-const layout = [
-  ['Operating Systems', 'Programming Languages', 'Tools'],
-  ['Databases', 'Frameworks']
-] as const;
 ---
 
 <section class="tech-stack-banner">
@@ -68,31 +64,28 @@ const layout = [
     </div>
 
     <div class="tech-stack-categories">
-      {layout.map((row) => (
-        <div class="category-row">
-          {row.map((category) => (
-            <div class="category">
-              <h3>{category}</h3>
-              <div class="tech-items">
-                {techCategories[category as keyof typeof techCategories].map((tech: TechItem) => (
-                  <div class="tech-item">
-                    {tech.icon && (
-                      <svg
-                        class="tech-icon"
-                        viewBox="0 0 24 24"
-                        role="img"
-                        aria-label={`${tech.name} icon`}
-                        focusable="false"
-                      >
-                        <path d={tech.icon.path} />
-                      </svg>
-                    )}
-                    <p>{tech.name}</p>
-                  </div>
-                ))}
+      {Object.entries(techCategories).map(([category, items]) => (
+        <div class="category">
+          <h3>{category}</h3>
+          <div class="tech-items">
+            {items.map((tech: TechItem) => (
+              <div class="tech-item">
+                {tech.icon && (
+                  <svg
+                    class="tech-icon"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    aria-label={`${tech.name} icon`}
+                    focusable="false"
+                    style={`fill: ${tech.color}`}
+                  >
+                    <path d={tech.icon.path} />
+                  </svg>
+                )}
+                <p>{tech.name}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       ))}
     </div>
