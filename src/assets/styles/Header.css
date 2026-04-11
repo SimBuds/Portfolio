@@ -126,7 +126,7 @@
   }
 
   .navbar-inner {
-    padding: 0 var(--padding-mobile);
+    padding: 0 var(--spacing-md);
     flex-direction: column;
     gap: var(--spacing-xs);
     align-items: stretch;
@@ -153,11 +153,18 @@
     display: flex;
   }
 
-  .navbar-center,
-  .navbar-social {
+  .navbar-center {
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-md);
+    width: 100%;
+  }
+
+  .navbar-social {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
     width: 100%;
   }
 

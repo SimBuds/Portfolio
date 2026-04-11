@@ -112,6 +112,15 @@
 
   .now-entry {
     padding: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .now-entry-meta {
+    justify-content: center;
+  }
+
+  .now-entry-tags {
+    justify-content: center;
   }
 
   .now-entry h3 {

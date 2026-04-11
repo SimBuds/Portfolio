@@ -67,7 +67,12 @@
     font-size: var(--font-size-2xl);
   }
 
+  .about-text {
+    text-align: center;
+  }
+
   .about-image img {
-    max-width: 300px;
+    width: 100%;
+    max-width: 100%;
   }
 } 
