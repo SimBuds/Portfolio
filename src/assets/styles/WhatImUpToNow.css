@@ -105,6 +105,17 @@
   color: var(--color-primary-light);
 }
 
+.now-more-link {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.now-more-link a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .now-section-header h2 {
     font-size: var(--font-size-2xl);

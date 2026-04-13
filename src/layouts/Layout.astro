@@ -1,8 +1,28 @@
 ---
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../assets/styles/App.css';
 import '../assets/styles/theme.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Casey Hsu',
+  jobTitle: 'Full-Stack JavaScript Developer',
+  url: 'https://caseyhsu.com/',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Toronto',
+    addressRegion: 'ON',
+    addressCountry: 'CA',
+  },
+  sameAs: [
+    'https://github.com/casey-hsu',
+    'https://www.linkedin.com/in/casey-hsu/',
+    'https://twitter.com/caseyhsuble',
+  ],
+};
 ---
 
 <!doctype html>
@@ -13,21 +33,21 @@ import Header from '../components/Header.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Casey Hsu | Full-Stack JavaScript Developer</title>
-		<meta name="description" content="Casey Hsu — Full-stack JavaScript developer with 3+ years delivering Shopify storefronts, HubSpot CMS themes, and platform migrations. Contentful Certified Professional. Based in Toronto." />
+		<title>Casey Hsu | Full-Stack JavaScript Developer | Toronto</title>
+		<meta name="description" content="Full-stack JavaScript developer in Toronto specializing in Shopify, HubSpot, and Contentful. 3+ years delivering e-commerce storefronts, custom CMS themes, and platform migrations." />
 		<!-- Open Graph -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://caseyhsu.com/" />
-		<meta property="og:title" content="Casey Hsu | Full-Stack JavaScript Developer" />
-		<meta property="og:description" content="Casey Hsu — Full-stack JavaScript developer with 3+ years delivering Shopify storefronts, HubSpot CMS themes, and platform migrations. Based in Toronto." />
-		<meta property="og:image" content="https://caseyhsu.com/og-image.jpg" />
+		<meta property="og:title" content="Casey Hsu | Full-Stack JavaScript Developer | Toronto" />
+		<meta property="og:description" content="Full-stack JavaScript developer in Toronto specializing in Shopify, HubSpot, and Contentful. 3+ years delivering e-commerce storefronts, custom CMS themes, and platform migrations." />
+		<meta property="og:image" content="https://caseyhsu.com/favicon.ico" />
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:creator" content="@caseyhsuble" />
-		<meta name="twitter:title" content="Casey Hsu | Full-Stack JavaScript Developer" />
-		<meta name="twitter:description" content="Casey Hsu — Full-stack JavaScript developer with 3+ years delivering Shopify storefronts, HubSpot CMS themes, and platform migrations. Based in Toronto." />
-		<meta name="twitter:image" content="https://caseyhsu.com/og-image.jpg" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<meta name="twitter:title" content="Casey Hsu | Full-Stack JavaScript Developer | Toronto" />
+		<meta name="twitter:description" content="Full-stack JavaScript developer in Toronto specializing in Shopify, HubSpot, and Contentful. 3+ years delivering e-commerce storefronts, custom CMS themes, and platform migrations." />
+		<meta name="twitter:image" content="https://caseyhsu.com/favicon.ico" />
+		<script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
 	</head>
 	<body>
 		<Header />

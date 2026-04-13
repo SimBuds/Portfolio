@@ -1,28 +1,45 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import '../../assets/styles/FeaturedProjects.css';
+import project1Image from '../../assets/images/project1.png';
+import project2Image from '../../assets/images/project2.png';
+import project3Image from '../../assets/images/project3.png';
 
 type Project = {
   name: string;
   description: string;
+  image: ImageMetadata;
+  imageAlt: string;
   tags: string[];
   link?: string;
+  availabilityNote?: string;
 };
 
 const projects: Project[] = [
   {
-    name: 'Shopify E-Commerce Storefront',
-    description: '14+ page Shopify storefront with 200+ product SKUs serving 500+ monthly visitors. Includes a custom interactive product configurator, Liquid templates, and Stripe payment integration. Ongoing as sole developer across 3 project phases.',
+    name: 'Luxury Jewelry Brand — Shopify Ring Builder',
+    description: "Migrated a WordPress portfolio into a 14+ page Shopify storefront and built a custom ring builder for stone, band, and size configuration. The site now supports 200+ SKUs and serves 500+ monthly visitors, with ongoing iteration over a 2+ year engagement.",
+    image: project1Image,
+    imageAlt: 'Shopify ring builder and storefront',
     tags: ['Shopify', 'Liquid', 'Stripe', 'WordPress', 'SEO'],
+    availabilityNote: 'Live site available on request.',
   },
   {
-    name: 'HubSpot CMS Theme',
-    description: '8-page custom HubSpot theme built from scratch with full CRM integration. Managed the complete legacy-to-custom migration. Achieved 90+ PageSpeed scores and a 30% improvement in page load speed.',
+    name: 'AI Agency Client — Custom HubSpot Theme',
+    description: 'Rebuilt a legacy HubSpot theme into a custom 8-page implementation with reusable HubL modules and CRM-connected forms. The migration improved maintainability and delivered 90+ PageSpeed scores with a 30% load-time improvement.',
+    image: project2Image,
+    imageAlt: 'HubSpot performance and homepage',
     tags: ['HubSpot', 'HubL', 'Google Tag Manager', 'JavaScript', 'CSS'],
+    availabilityNote: 'Live site available on request.',
   },
   {
-    name: 'Shopify E-Commerce Components',
-    description: 'Custom Shopify page layouts and product display modules for a vintage gaming retailer. Managed a 400+ item catalog migration via JSON restructuring, plus technical SEO audits and security hardening.',
+    name: 'Vintage Gaming Retailer — Shopify Components',
+    description: 'Built collection layouts and custom product modules for a vintage gaming storefront. A 400+ item JSON migration standardized catalog data and removed manual formatting bottlenecks while improving discoverability with technical SEO updates.',
+    image: project3Image,
+    imageAlt: 'Shopify collection and product modules',
     tags: ['Shopify', 'Liquid', 'JSON', 'SEO', 'Security'],
+    availabilityNote: 'Live site available on request.',
   },
 ];
 ---
@@ -36,9 +53,7 @@ const projects: Project[] = [
     {projects.map((project) => (
       <article class="project-card">
         <div class="project-image">
-          <div class="project-image-placeholder">
-            <span>Coming Soon</span>
-          </div>
+          <Image src={project.image} alt={project.imageAlt} />
         </div>
         <div class="project-content">
           <h3>{project.name}</h3>
@@ -53,6 +68,7 @@ const projects: Project[] = [
               Visit Site
             </a>
           )}
+          {project.availabilityNote && <p class="project-note">{project.availabilityNote}</p>}
         </div>
       </article>
     ))}

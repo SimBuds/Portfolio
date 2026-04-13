@@ -1,10 +1,10 @@
 ---
 import '../assets/styles/index.css';
 import AboutMe from '../components/sections/AboutMe.astro';
+import ContactSection from '../components/sections/ContactSection.astro';
 import FeaturedProjects from '../components/sections/FeaturedProjects.astro';
 import HeroSection from '../components/sections/HeroSection.astro';
 import PoweredBy from '../components/sections/PoweredBy.astro';
-import ReachMe from '../components/sections/ReachMe.astro';
 import TechStack from '../components/sections/TechStack.astro';
 import WhatImUpToNow from '../components/sections/WhatImUpToNow.astro';
 import Layout from '../layouts/Layout.astro';
@@ -12,6 +12,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <main class="home-layout">
+    <section id="hero-top" aria-hidden="true"></section>
     <section id="hero" aria-label="Hero Section">
       <HeroSection />
     </section>
@@ -21,14 +22,14 @@ import Layout from '../layouts/Layout.astro';
     <section id="projects" aria-label="Featured Projects">
       <FeaturedProjects />
     </section>
-    <section id="techstack" aria-label="Technology Stack">
-      <TechStack />
-    </section>
     <section id="aboutme" aria-label="About Me">
       <AboutMe />
     </section>
-    <section id="reachme" aria-label="Reach Me">
-      <ReachMe />
+    <section id="techstack" aria-label="Technology Stack">
+      <TechStack />
+    </section>
+    <section id="contact" aria-label="Contact">
+      <ContactSection />
     </section>
     <section id="powered-by" aria-label="Powered By">
       <PoweredBy />

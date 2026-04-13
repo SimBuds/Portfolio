@@ -4,6 +4,7 @@ import {
 siDocker,
 siGit,
 siJavascript,
+siSass,
 siTypescript,
 siPython,
 siReact,
@@ -21,21 +22,28 @@ import '../../assets/styles/TechStack.css';
 type TechItem = { name: string; color: string; icon: SimpleIcon | null };
 
 const techCategories: Record<string, TechItem[]> = {
+  'CMS & E-Commerce': [
+    { name: 'Shopify', color: '#96BF48', icon: siShopify },
+    { name: 'HubSpot', color: '#FF7A59', icon: null },
+    { name: 'Contentful', color: '#2478CC', icon: siContentful },
+    { name: 'WordPress', color: '#21759B', icon: siWordpress }
+  ],
   'Languages': [
     { name: 'JavaScript', color: '#F7DF1E', icon: siJavascript },
     { name: 'TypeScript', color: '#3178C6', icon: siTypescript },
-    { name: 'Python', color: '#3776AB', icon: siPython }
+    { name: 'Python', color: '#3776AB', icon: siPython },
+    { name: 'Sass', color: '#CC6699', icon: siSass }
   ],
   'Frameworks': [
     { name: 'React', color: '#61DAFB', icon: siReact },
     { name: 'Next.js', color: '#ffffff', icon: siNextdotjs },
     { name: 'Node.js', color: '#339933', icon: siNodedotjs }
   ],
-  'CMS & E-Commerce': [
-    { name: 'Shopify', color: '#96BF48', icon: siShopify },
-    { name: 'WordPress', color: '#21759B', icon: siWordpress },
-    { name: 'HubSpot', color: '#FF7A59', icon: null },
-    { name: 'Contentful', color: '#2478CC', icon: siContentful }
+  'AI & Tooling': [
+    { name: 'GitHub Copilot', color: '#ffffff', icon: null },
+    { name: 'Cursor', color: '#61DAFB', icon: null },
+    { name: 'Claude', color: '#D97706', icon: null },
+    { name: 'Ollama', color: '#8B5CF6', icon: null }
   ],
   'Data & DevOps': [
     { name: 'MongoDB', color: '#47A248', icon: siMongodb },
@@ -60,8 +68,8 @@ const techCategories: Record<string, TechItem[]> = {
       <p>
         The tools, languages, and platforms I use to design, build, and ship fast, reliable experiences.
       </p>
-      <a href="/projectlist" class="tech-cta-button">
-        View projects built with this stack
+      <a href="/#projects" class="tech-cta-button">
+        View featured projects
       </a>
     </div>
 

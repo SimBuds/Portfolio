@@ -6,29 +6,27 @@ import '../assets/styles/Header.css';
 
 <nav class="navbar">
   <div class="navbar-inner">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" />
-    <div class="navbar-top">
-      <div class="navbar-brand">
-        <a href="/">
-          <Image src={favicon} class="d-inline-block align-top" alt="Casey Hsu's Logo" />
-          <span class="brand-text">Casey Hsu</span>
-        </a>
-      </div>
-      <label class="navbar-toggler" for="nav-toggle" aria-label="Toggle navigation menu">
-        <span aria-hidden="true">☰</span>
-      </label>
+    <div class="navbar-brand">
+      <a href="/#hero-top">
+        <Image src={favicon} class="d-inline-block align-top" alt="Casey Hsu's Logo" />
+        <span class="brand-text">Casey Hsu</span>
+      </a>
     </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" />
+    <label class="navbar-toggler" for="nav-toggle" aria-label="Toggle navigation menu">
+      <span aria-hidden="true">☰</span>
+    </label>
     <div class="navbar-collapse">
       <ul class="navbar-center">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/projectlist" class="nav-link">Projects</a></li>
+        <li><a href="/#hero-top" class="nav-link">Home</a></li>
+        <li><a href="/#projects" class="nav-link">Projects</a></li>
         <li><a href="/#aboutme" class="nav-link">About</a></li>
-        <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a></li>
-        <li><a href="/contact" class="nav-link">Contact</a></li>
+        <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume PDF</a></li>
+        <li><a href="/#contact" class="nav-link">Contact</a></li>
       </ul>
       <ul class="navbar-social">
         <li><a href="https://twitter.com/caseyhsuble" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-        <li><a href="https://github.com/SimBuds" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+        <li><a href="https://github.com/casey-hsu" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a></li>
         <li><a href="https://www.linkedin.com/in/casey-hsu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
       </ul>
     </div>
