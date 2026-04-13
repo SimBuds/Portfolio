@@ -1,11 +1,9 @@
-# dependencies
+# HIDE ME
 /node_modules
 /package-lock.json
-/.astro
 
-# production
+/.astro
 /dist
 
-# misc
 .env
-.vscode/
+/.vscode
