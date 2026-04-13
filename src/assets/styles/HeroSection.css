@@ -39,9 +39,10 @@
   gap: var(--spacing-md);
 }
 
-.availability i {
-  color: var(--color-primary);
-  font-size: var(--font-size-lg);
+.availability-icon {
+  color: #22c55e;
+  font-weight: 700;
+  margin-right: var(--spacing-xs);
 }
 
 .hero-text {

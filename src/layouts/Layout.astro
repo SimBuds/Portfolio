@@ -1,5 +1,4 @@
 ---
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../assets/styles/App.css';
 import '../assets/styles/theme.css';
 import Footer from '../components/Footer.astro';
@@ -32,6 +31,25 @@ const personSchema = {
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			/>
+		</noscript>
 		<meta name="generator" content={Astro.generator} />
 		<title>Casey Hsu | Full-Stack JavaScript Developer | Toronto</title>
 		<meta name="description" content="Full-stack JavaScript developer in Toronto specializing in Shopify, HubSpot, and Contentful. 3+ years delivering e-commerce storefronts, custom CMS themes, and platform migrations." />

@@ -1,5 +1,4 @@
 /* theme.css - Global Design System */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
   /* Layout */
@@ -14,15 +13,15 @@
   --color-bg-light: #f8f9fa;
   --color-text-primary: #ffffff;
   --color-text-secondary: #e0e0e0;
-  --color-text-muted: #9ca3af;
+  --color-text-muted: #b7c0d1;
   --color-border: #1a3050;
   --color-error: #db2777;
   --color-error-light: #ff69b4;
 
   /* Primary Colors */
-  --color-primary: #3b82f6;
-  --color-primary-dark: #1e40af;
-  --color-primary-light: #60a5fa;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #93c5fd;
 
   /* Accent Colors */
   --color-accent: #060d18;

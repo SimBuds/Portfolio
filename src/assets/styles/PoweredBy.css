@@ -45,14 +45,15 @@
   background-color: var(--color-accent-light);
 }
 
-.icon i {
-  font-size: var(--font-size-3xl);
-  color: var(--color-primary);
-  transition: color var(--transition-base);
+.powered-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-primary);
+  transition: fill var(--transition-base);
 }
 
-.icon:hover i {
-  color: var(--color-primary-light);
+.icon:hover .powered-icon {
+  fill: var(--color-primary-light);
 }
 
 .icon p {
@@ -80,8 +81,9 @@
     padding: var(--spacing-sm) var(--spacing-xs);
   }
 
-  .icon i {
-    font-size: var(--font-size-2xl);
+  .powered-icon {
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .icon p {

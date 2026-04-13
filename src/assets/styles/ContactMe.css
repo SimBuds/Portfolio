@@ -59,11 +59,15 @@
   transition: all var(--transition-base);
 }
 
-.contact-link i {
-  font-size: var(--font-size-lg);
+.contact-link .social-icon {
+  min-width: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-primary);
-  width: 20px;
-  text-align: center;
+  font-weight: 700;
+  line-height: 1;
+  transition: color var(--transition-base);
   flex-shrink: 0;
 }
 
@@ -71,6 +75,10 @@
   border-color: var(--color-primary);
   color: var(--color-text-primary);
   transform: translateX(4px);
+}
+
+.contact-link:hover .social-icon {
+  color: var(--color-primary-light);
 }
 
 /* Right column — form */

@@ -53,7 +53,14 @@ const projects: Project[] = [
     {projects.map((project) => (
       <article class="project-card">
         <div class="project-image">
-          <Image src={project.image} alt={project.imageAlt} />
+          <Image
+            src={project.image}
+            alt={project.imageAlt}
+            format="webp"
+            widths={[480, 768, 1024]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
+          />
         </div>
         <div class="project-content">
           <h3>{project.name}</h3>

@@ -1,4 +1,5 @@
 ---
+import { siAstro, siDigitalocean, siNodedotjs } from 'simple-icons';
 import '../../assets/styles/PoweredBy.css';
 ---
 
@@ -6,15 +7,21 @@ import '../../assets/styles/PoweredBy.css';
   <span class="powered-by-text">My portfolio is powered by</span>
   <div class="tech-icons">
     <div class="icon">
-      <i class="fa-solid fa-star" aria-hidden="true"></i>
+      <svg class="powered-icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+        <path d={siAstro.path}></path>
+      </svg>
       <p>Astro</p>
     </div>
     <div class="icon">
-      <i class="fa-brands fa-digital-ocean" aria-hidden="true"></i>
+      <svg class="powered-icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+        <path d={siDigitalocean.path}></path>
+      </svg>
       <p>DigitalOcean</p>
     </div>
     <div class="icon">
-      <i class="fab fa-node-js" aria-hidden="true"></i>
+      <svg class="powered-icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+        <path d={siNodedotjs.path}></path>
+      </svg>
       <p>Node.js</p>
     </div>
   </div>
