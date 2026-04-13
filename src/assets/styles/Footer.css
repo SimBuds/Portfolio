@@ -4,7 +4,7 @@
   width: 100%;
   background-color: var(--color-bg-black);
   border-top: 2px solid var(--color-border);
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
   text-align: center;
   margin-top: auto;
 }
@@ -51,7 +51,7 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-xl);
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
   }
 
   .footer-socials {

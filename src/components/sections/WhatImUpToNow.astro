@@ -3,35 +3,45 @@ import '../../assets/styles/WhatImUpToNow.css';
 
 const entries = [
   {
-    platform: 'Shopify',
-    badge: 'Current Client',
-    date: '2023 – Present',
-    title: 'Luxury Jewelry Brand — Custom E-Commerce Storefront',
+    badge: 'In progress',
+    date: '2026',
+    title: 'Local LLMs with Ollama — Tuned For My Workstation',
     body: [
-      `Ongoing Shopify build and maintenance engagement that started as a WordPress migration and evolved into a full storefront with 200+ SKUs, a custom ring builder, and recurring feature releases.`,
+      `Running and benchmarking open models locally with Ollama on a Ryzen 9 5900X, NVIDIA GeForce RTX 3080 (10 GB), and 232 GB DDR4 — balancing VRAM limits, context length, and throughput so inference stays practical for real coding sessions.`,
+      `I'm iterating on GPU-friendly model choices, quantization, and runtime settings to get the best fit for this hardware, and wiring the stack into my CLI workflow alongside cloud tools: local models supplement Claude Code and OpenClaw CLI for fast iteration, offline-capable tasks, and workloads where keeping context on-machine makes sense.`,
     ],
-    tags: ['Shopify', 'Liquid', 'Stripe', 'WordPress', 'Elementor', 'SEO', 'Responsive Design'],
+    tags: [
+      'Ollama',
+      'Local LLM',
+      'GPU inference',
+      'CUDA',
+      'Quantization',
+      'Developer tooling',
+      'Claude Code',
+      'OpenClaw CLI',
+      'AMD Ryzen',
+      'NVIDIA RTX',
+    ],
   },
   {
-    platform: 'HubSpot CMS',
-    badge: 'Completed',
-    date: '2025',
-    title: 'AI Agency Client — Custom HubSpot Theme & Migration',
+    badge: 'In progress',
+    date: '2026',
+    title: 'Arch Linux Migration & Self-Hosted Server',
     body: [
-      `Custom 8-page HubSpot rebuild for an AI agency, including full legacy migration, reusable HubL modules, CRM-connected forms, and performance tuning that reached 90+ PageSpeed with a 30% load-time gain.`,
+      `Transitioning my daily driver and workflow to Arch Linux to deepen hands-on experience with low-level system configuration, package management, and long-term maintainability. In parallel, I'm standing up a self-hosted server environment — hardening access, documenting services, and building repeatable setup patterns I can rely on for experiments and side projects.`,
+      `The goal is a stable, observable stack I understand end-to-end: from OS fundamentals through deployment and routine operations, not just application-level work.`,
     ],
-    tags: ['HubSpot', 'HubL', 'Custom Theme', 'Google Tag Manager', 'JavaScript', 'CSS', 'Migration'],
-  },
-  {
-    platform: 'Shopify',
-    badge: 'Completed',
-    date: '2023',
-    title: 'Vintage Gaming Retailer — Shopify Components',
-    body: [
-      `Built custom Shopify collection and product modules, then executed a 400+ item JSON catalog migration with technical SEO and security improvements to make updates faster and storefront structure more reliable.`,
+    tags: [
+      'Arch Linux',
+      'Linux administration',
+      'Self-hosting',
+      'Homelab',
+      'Infrastructure',
+      'SSH',
+      'Systemd',
+      'Security hardening',
     ],
-    tags: ['Shopify', 'Liquid', 'JSON', 'Data Migration', 'SEO Audits', 'Security'],
-  },
+  }
 ];
 ---
 
@@ -39,8 +49,8 @@ const entries = [
   <div class="now-section-header">
     <h2>What I'm Up To Now</h2>
     <p>
-      Since graduating, I've been building production websites for real clients across WordPress,
-      HubSpot, and Shopify — here's a closer look at each project and the work involved.
+      Outside client delivery, I'm investing in Linux fundamentals, self-hosted infrastructure, and
+      a local AI stack — here's what I'm actively building and tuning right now.
     </p>
   </div>
   <div class="now-entries">
@@ -64,7 +74,4 @@ const entries = [
       </article>
     ))}
   </div>
-  <p class="now-more-link">
-    Looking for details? <a href="/#projects">See client work highlights below</a>.
-  </p>
 </div>
