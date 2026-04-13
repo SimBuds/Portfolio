@@ -10,17 +10,10 @@ const personSchema = {
   name: 'Casey Hsu',
   jobTitle: 'Full-Stack JavaScript Developer',
   url: 'https://caseyhsu.com/',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Toronto',
-    addressRegion: 'ON',
-    addressCountry: 'CA',
-  },
   sameAs: [
     'https://github.com/casey-hsu',
-    'https://www.linkedin.com/in/casey-hsu/',
-    'https://twitter.com/caseyhsuble',
-  ],
+    'https://www.linkedin.com/in/casey-hsu/'
+  ]
 };
 ---
 
@@ -59,12 +52,6 @@ const personSchema = {
 		<meta property="og:title" content="Casey Hsu | Full-Stack JavaScript Developer | Toronto" />
 		<meta property="og:description" content="Full-stack JavaScript developer in Toronto specializing in Shopify, HubSpot, and Contentful. 3+ years delivering e-commerce storefronts, custom CMS themes, and platform migrations." />
 		<meta property="og:image" content="https://caseyhsu.com/favicon.ico" />
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:creator" content="@caseyhsuble" />
-		<meta name="twitter:title" content="Casey Hsu | Full-Stack JavaScript Developer | Toronto" />
-		<meta name="twitter:description" content="Full-stack JavaScript developer in Toronto specializing in Shopify, HubSpot, and Contentful. 3+ years delivering e-commerce storefronts, custom CMS themes, and platform migrations." />
-		<meta name="twitter:image" content="https://caseyhsu.com/favicon.ico" />
 		<script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
 	</head>
 	<body>

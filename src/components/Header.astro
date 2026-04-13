@@ -39,3 +39,16 @@ import '../assets/styles/Header.css';
     </div>
   </div>
 </nav>
+
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const collapsibleLinks = document.querySelectorAll('.navbar-collapse a');
+
+  collapsibleLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (navToggle instanceof HTMLInputElement) {
+        navToggle.checked = false;
+      }
+    });
+  });
+</script>
