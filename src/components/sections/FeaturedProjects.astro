@@ -47,7 +47,9 @@ const projects: Project[] = [
 <div class="featured-projects-wrapper">
   <div class="project-header" id="projects">
     <h2>CLIENT WORK</h2>
-    <p>Production client work — e-commerce storefronts, custom CMS themes, and platform migrations shipped end-to-end.</p>
+    <p>
+      Production client work — e-commerce storefronts, custom CMS themes, and platform migrations shipped end-to-end.
+    </p>
   </div>
   <div class="featured-projects">
     {projects.map((project) => (
@@ -72,8 +74,7 @@ const projects: Project[] = [
           </div>
           {project.link && (
             <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link">
-              Visit Site
-            </a>
+              Visit Site</a>
           )}
           {project.availabilityNote && <p class="project-note">{project.availabilityNote}</p>}
         </div>
