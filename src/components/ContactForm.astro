@@ -1,0 +1,77 @@
+---
+import { SITE } from '../data/site';
+import SectionHead from './SectionHead.astro';
+
+const lines = [
+  { icon: '✦',  label: 'EMAIL',    value: SITE.email,    href: 'mailto:' + SITE.email },
+  { icon: 'GH', label: 'GITHUB',   value: SITE.github,   href: 'https://' + SITE.github },
+  { icon: 'in', label: 'LINKEDIN', value: SITE.linkedin, href: 'https://' + SITE.linkedin },
+  { icon: '◐',  label: 'TZ',       value: SITE.tz + ' · ' + SITE.location, href: '#' },
+];
+---
+
+<section class="section" id="contact">
+  <div class="container">
+    <SectionHead
+      idx="05"
+      kicker="// contact"
+      inlineDescr
+      descr="Available for full-time roles and contract work. Reply within 1–2 business days."
+    />
+
+    <div class="contact-grid">
+      <div class="left reveal">
+        <h2>Let's build something <span class="em">worth shipping</span>.</h2>
+        <p>Have a project in mind, a role to fill, or just want to say hello? I'm always open to new opportunities and interesting conversations.</p>
+
+        <div class="contact-lines">
+          {lines.map((l) => (
+            <a class="contact-line" href={l.href}>
+              <span class="icon mono">{l.icon}</span>
+              <span class="k">{l.label}</span>
+              <span class="v">{l.value}</span>
+              <span class="arrow">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contact-form">
+        <div class="contact-form-chrome">
+          <span><span class="dot dot-sm"></span>contact_form.astro</span>
+          <span class="muted-3">POST /api/send</span>
+        </div>
+        <div class="contact-form-body">
+          <label for="cf-from">$ from</label>
+          <input id="cf-from" class="mono" type="email" placeholder="you@company.com" required />
+
+          <label for="cf-msg">$ message</label>
+          <textarea id="cf-msg" placeholder="Tell me what's on your mind..." required rows="5"></textarea>
+
+          <div class="foot">
+            <span class="hint" id="cf-hint">enter to send · esc to cancel</span>
+            <button type="submit" class="btn primary" id="cf-submit">
+              <span>Send message</span><span class="k">⏎</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const submit = document.getElementById('cf-submit');
+  const hint = document.getElementById('cf-hint');
+  if (form && submit && hint) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submit.innerHTML = '<span>Sending…</span>';
+      setTimeout(() => {
+        submit.innerHTML = '<span>Delivered ✓</span>';
+        hint.textContent = '✓ delivered — talk soon';
+      }, 900);
+    });
+  }
+</script>

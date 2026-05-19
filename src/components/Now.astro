@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHead from './SectionHead.astro';
+
+const items = (await getCollection('now')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section class="section" id="now">
+  <div class="container">
+    <SectionHead
+      idx="01"
+      kicker="// now"
+      inlineDescr
+      descr="Outside client delivery — what I'm investing in right now."
+    />
+
+    <div class="big-title">
+      <h2>Currently building.</h2>
+      <p>Linux fundamentals, self-hosted infrastructure, and a local AI stack. Side projects that compound back into client work.</p>
+    </div>
+
+    <div class="now-grid">
+      {items.map(async (it) => {
+        const { Content } = await it.render();
+        return (
+          <article class="card reveal now-card">
+            <div class="now-card-head">
+              <span class="cmd">{it.data.cmd}</span>
+              <span class="status">
+                <span class="dot dot-sm"></span>
+                {it.data.status} · {it.data.day}
+              </span>
+            </div>
+            <div class="now-card-body">
+              <h3>{it.data.title}</h3>
+              <div class="prose"><Content /></div>
+              <p>{it.data.note}</p>
+              <div class="now-tags">
+                {it.data.tags.map((t) => <span class="tag">{t}</span>)}
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .prose { color: var(--fg-2); line-height: 1.6; font-size: 14px; }
+  .prose p { color: var(--fg-2) !important; }
+</style>

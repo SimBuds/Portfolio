@@ -1,0 +1,24 @@
+---
+interface Props {
+  idx: string;
+  kicker: string;
+  descr?: string;
+  inlineDescr?: boolean;
+}
+const { idx, kicker, descr, inlineDescr = false } = Astro.props;
+---
+
+<div class="sec-head-wrap">
+  <div class="sec-head">
+    <span class="label idx">{idx}</span>
+    <span class="label arrow">/</span>
+    <span class="label title">{kicker}</span>
+    {inlineDescr && descr && (
+      <span class="sec-head-inline-descr">
+        <span class="sec-head-arrow">›</span>
+        <span class="sec-head-flow">{descr}</span>
+      </span>
+    )}
+  </div>
+  {descr && !inlineDescr && <p class="sec-head-descr">{descr}</p>}
+</div>

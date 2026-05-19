@@ -1,0 +1,60 @@
+---
+import SectionHead from './SectionHead.astro';
+
+const stats = [
+  { k: '3+ yrs', v: 'shipping production code' },
+  { k: '14+',    v: 'page custom Shopify themes' },
+  { k: '400+',   v: 'SKUs migrated · normalized' },
+  { k: '90+',    v: 'Lighthouse · -30% TTI' },
+];
+---
+
+<section class="section" id="about">
+  <div class="container">
+    <SectionHead
+      idx="03"
+      kicker="// about"
+      inlineDescr
+      descr="Nine years in kitchens, three in code — a long detour that taught me to ship."
+    />
+
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="about-photo-chrome">
+          <span>~/about.jpg</span>
+          <span class="muted-3">portrait/02</span>
+        </div>
+        <div class="about-photo-img">
+          <img class="photo" src="/casey-about.jpg" alt="Casey Hsu portrait" />
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <h2>Nine years in kitchens, three in code. The discipline carries over.</h2>
+
+        <div class="about-para">
+          <p>
+            Most of my work today is in <strong>Shopify</strong>, <strong>HubSpot CMS</strong>, and <strong>WordPress</strong> —
+            with React/Next.js frontends and Node.js backends. The day-to-day is JavaScript, TypeScript, Docker, and modern AI-assisted workflows.
+          </p>
+          <p>
+            Before tech, I spent nine years leading culinary teams. It taught me how to stay calm under pressure, communicate clearly, and deliver on deadlines.
+            I'm a <strong>George Brown</strong> Computer Programming and Analysis honours grad and a <strong>Contentful Certified Professional</strong>.
+          </p>
+          <p class="muted">
+            Currently open to full-time roles in the Greater Toronto Area, including hybrid and on-site opportunities.
+          </p>
+        </div>
+
+        <div class="stats-strip">
+          {stats.map((s) => (
+            <div class="stat">
+              <div class="k">{s.k}</div>
+              <div class="v">{s.v}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

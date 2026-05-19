@@ -1,0 +1,31 @@
+---
+import { NAV } from '../data/site';
+---
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark mono">C/</span>
+      <span class="brand-text">
+        <span class="name">Casey Hsu</span>
+        <span class="meta label brand-meta">JS DEV · TORONTO</span>
+      </span>
+    </a>
+
+    <div class="nav-links">
+      {NAV.map((n) => (
+        <a href={'#' + n.id} class="nav-link">
+          <span class="n">{n.n}</span>
+          <span class="l">{n.label}</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="nav-right">
+      <a href="#contact" class="btn primary">
+        <span>Get in touch</span>
+        <span class="k">↗</span>
+      </a>
+    </div>
+  </div>
+</nav>

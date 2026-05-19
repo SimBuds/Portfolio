@@ -1,0 +1,39 @@
+---
+import { STACK } from '../data/stack';
+import SectionHead from './SectionHead.astro';
+---
+
+<section class="section" id="stack">
+  <div class="container">
+    <SectionHead
+      idx="04"
+      kicker="// stack"
+      inlineDescr
+      descr="The tools I reach for daily. Not exhaustive — these are the ones in active rotation."
+    />
+
+    <div class="big-title">
+      <h2>Daily drivers.</h2>
+      <p>A small, opinionated set that covers most of what I build. Boring where it should be, sharp where it matters.</p>
+    </div>
+
+    <div class="stack-grid">
+      {STACK.map((g, i) => (
+        <div class="card reveal stack-group">
+          <div class="stack-group-head">
+            <span>{String(i + 1).padStart(2, '0')} /</span>
+            <span class="label">{g.label}</span>
+          </div>
+          <ul class="stack-list">
+            {g.items.map((it) => (
+              <li class="stack-item">
+                <span class="name">{it.name}</span>
+                <span class="note">{it.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

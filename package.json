@@ -1,7 +1,7 @@
 {
-  "name": "Casey's Portfolio",
+  "name": "casey-hsu-portfolio",
   "type": "module",
-  "version": "1.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,11 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1",
-    "simple-icons": "^16.10.0"
+    "astro": "^5.0.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.2",
-    "typescript": "^5.9.3"
+    "@types/node": "^22.0.0"
   }
 }
