@@ -130,6 +130,17 @@ body > * { position: relative; z-index: 1; }
 .nav-link .n { color: var(--fg-4); }
 .nav-link .l { color: var(--fg-2); }
 .nav-link:hover .l { color: var(--fg); }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-toggle { display: none; width: 36px; height: 36px; border-radius: 6px; background: var(--bg-2); border: 1px solid var(--line); padding: 0; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.nav-toggle span { display: block; width: 16px; height: 1.5px; background: var(--fg); transition: transform 0.2s, opacity 0.2s; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+.nav-mobile { display: none; flex-direction: column; gap: 4px; padding: 12px var(--pad-x) 20px; background: rgba(11,12,14,0.96); backdrop-filter: blur(10px) saturate(140%); border-bottom: 1px solid var(--line); }
+.nav-mobile-link { display: flex; align-items: baseline; gap: 10px; padding: 14px 4px; border-bottom: 1px solid var(--line); font-family: 'Geist Mono', monospace; font-size: 14px; }
+.nav-mobile-link .n { color: var(--fg-4); font-size: 12px; }
+.nav-mobile-link .l { color: var(--fg); }
+.nav-mobile-cta { margin-top: 16px; justify-content: center; }
 
 /* Hero */
 .hero { padding-top: 64px; padding-bottom: 32px; }
@@ -296,8 +307,13 @@ body > * { position: relative; z-index: 1; }
   .page { padding-top: 64px; }
   .nav { top: 56px; }
   .nav-links { display: none; }
-  .nav-inner { padding: 12px 0; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-mobile:not([hidden]) { display: flex; }
+  .nav-inner { padding: 10px 0; gap: 12px; }
+  .brand-mark { width: 32px; height: 32px; font-size: 13px; }
   .brand-text .meta { display: none; }
+  .brand-text { font-size: 13px; }
   .hero-cta { gap: 10px; width: 100%; }
   .hero-cta .btn { flex: 1 1 calc(50% - 10px); justify-content: center; padding: 12px 14px; font-size: 11px; }
   .hero { padding-top: 32px; }

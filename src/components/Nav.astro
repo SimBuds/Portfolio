@@ -22,10 +22,44 @@ import { NAV } from '../data/site';
     </div>
 
     <div class="nav-right">
-      <a href="#contact" class="btn primary">
+      <a href="#contact" class="btn primary nav-cta">
         <span>Get in touch</span>
         <span class="k">↗</span>
       </a>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+
+  <div class="nav-mobile" id="nav-mobile" hidden>
+    {NAV.map((n) => (
+      <a href={'#' + n.id} class="nav-mobile-link">
+        <span class="n">{n.n}</span>
+        <span class="l">{n.label}</span>
+      </a>
+    ))}
+    <a href="#contact" class="btn primary nav-mobile-cta">
+      <span>Get in touch</span><span class="k">↗</span>
+    </a>
+  </div>
 </nav>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const panel = document.getElementById('nav-mobile');
+  if (toggle && panel) {
+    const close = () => {
+      panel.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('open');
+    };
+    toggle.addEventListener('click', () => {
+      const open = panel.hidden;
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.classList.toggle('open', open);
+    });
+    panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+  }
+</script>
