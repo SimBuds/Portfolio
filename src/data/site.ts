@@ -7,8 +7,7 @@ export const SITE = {
   github: 'github.com/simbuds',
   linkedin: 'linkedin.com/in/casey-hsu',
   location: 'Toronto, ON',
-  tz: 'UTC-04',
-  version: '2026.05',
+  tz: 'UTC-04'
 };
 
 export const NAV = [
