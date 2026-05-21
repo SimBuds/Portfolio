@@ -3,22 +3,24 @@ import { SITE } from '../data/site';
 ---
 
 <div class="statusbar">
-  <div class="group">
-    <span class="k">SYS</span>
-    <span class="fg">casey@portfolio</span>
-    <span class="sep">·</span>
-    <span class="open"><span class="dot dot-sm"></span>OPEN TO WORK</span>
-  </div>
-  <div class="group">
-    <span class="k">LOC</span>
-    <span>{SITE.location}</span>
-    <span class="sep">·</span>
-    <span class="k">TZ</span>
-    <span>{SITE.tz}</span>
-    <span class="sep">·</span>
-    <span class="k">T</span>
-    <span id="sb-time" class="fg">--:--:--</span>
-    <span class="sep open-mobile-hide sep-gap"></span>
+  <div class="statusbar-inner container">
+    <div class="group">
+      <span class="k">SYS</span>
+      <span class="fg">casey@portfolio</span>
+      <span class="sep">·</span>
+      <span class="open"><span class="dot dot-sm"></span>OPEN TO WORK</span>
+    </div>
+    <div class="group">
+      <span class="k">LOC</span>
+      <span>{SITE.location}</span>
+      <span class="sep">·</span>
+      <span class="k">TZ</span>
+      <span>{SITE.tz}</span>
+      <span class="sep">·</span>
+      <span class="k">T</span>
+      <span id="sb-time" class="fg">--:--:--</span>
+      <span class="sep open-mobile-hide sep-gap"></span>
+    </div>
   </div>
 </div>
 

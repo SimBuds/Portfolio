@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /resume.pdf
 
-Sitemap: https://caseyhsu.com/sitemap.xml
+Sitemap: https://caseyhsu.com/sitemap-index.xml

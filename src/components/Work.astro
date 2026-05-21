@@ -13,14 +13,14 @@ import { WORK } from '../data/work';
     />
 
     <div class="big-title">
-      <h2>Selected client work.</h2>
+      <h2><span class="accent">Selected</span> client work.</h2>
     </div>
 
     <div class="work-list">
       {WORK.map((p) => (
         <article class="work-card reveal">
           <div class="work-visual">
-            <img class="photo" src={`/work-${p.slug}.jpg`} alt={p.client} />
+            <img class="photo" src={`/work-${p.slug}.jpg`} alt={p.client} loading="lazy" decoding="async" />
             <div class="work-anno">
               <div class="top">{p.annotation}</div>
               <div class="mid"><span class="prompt-4">$</span><span>{p.snippet}</span></div>
@@ -29,7 +29,7 @@ import { WORK } from '../data/work';
           </div>
           <div class="work-text">
             <div class="work-meta">
-              <span>{p.client}</span>
+              <span class="accent">{p.client}</span>
               <span>·</span>
               <span>{p.role}</span>
             </div>

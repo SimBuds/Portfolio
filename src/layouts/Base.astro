@@ -8,6 +8,20 @@ interface Props {
 }
 
 const { title = SITE.title, description = SITE.description } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const ogImage = new URL('/og-image.png', SITE.url).toString();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.name,
+  url: SITE.url,
+  jobTitle: 'Full-Stack JavaScript Developer',
+  email: `mailto:${SITE.email}`,
+  address: { '@type': 'PostalAddress', addressLocality: SITE.location },
+  sameAs: [`https://${SITE.github}`, `https://${SITE.linkedin}`],
+};
 ---
 
 <!doctype html>
@@ -20,17 +34,21 @@ const { title = SITE.title, description = SITE.description } = Astro.props;
   <title>{title}</title>
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="canonical" href={new URL(Astro.url.pathname, SITE.url).toString()} />
-  <link rel="sitemap" href="/sitemap.xml" />
+  <link rel="canonical" href={canonical} />
+  <link rel="sitemap" href="/sitemap-index.xml" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:url" content={new URL(Astro.url.pathname, SITE.url).toString()} />
+  <meta property="og:url" content={canonical} />
   <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:image" content={ogImage} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
