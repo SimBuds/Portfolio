@@ -16,11 +16,3 @@ npm run dev
 ```bash
 npm run build
 ```
-
-## Deploy
-
-Upload the built site to the server:
-
-```bash
-scp -r dist/* casey@159.203.33.15:/var/www/portfolio/
-```

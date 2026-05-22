@@ -36,17 +36,18 @@ const lines = [
         </div>
       </div>
 
-      <form class="contact-form reveal" id="contact-form">
+      <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/maqdrbly" method="POST">
         <div class="contact-form-chrome">
           <span><span class="dot dot-sm"></span>contact_form.astro</span>
-          <span class="muted-3">POST /api/send</span>
+          <span class="muted-3">POST /f/maqdrbly</span>
         </div>
         <div class="contact-form-body">
           <label for="cf-from">$ from</label>
-          <input id="cf-from" class="mono" type="email" placeholder="you@company.com" required />
+          <input id="cf-from" name="email" class="mono" type="email" placeholder="you@company.com" required />
 
           <label for="cf-msg">$ message</label>
-          <textarea id="cf-msg" placeholder="Tell me what's on your mind..." required rows="5"></textarea>
+          <textarea id="cf-msg" name="message" placeholder="Tell me what's on your mind..." required rows="5"></textarea>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="foot">
             <span class="hint" id="cf-hint">enter to send · esc to cancel</span>
@@ -61,17 +62,32 @@ const lines = [
 </section>
 
 <script>
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const submit = document.getElementById('cf-submit');
   const hint = document.getElementById('cf-hint');
   if (form && submit && hint) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       submit.innerHTML = '<span>Sending…</span>';
-      setTimeout(() => {
-        submit.innerHTML = '<span>Delivered ✓</span>';
-        hint.textContent = '✓ delivered — talk soon';
-      }, 900);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          submit.innerHTML = '<span>Delivered ✓</span>';
+          hint.textContent = '✓ delivered — talk soon';
+          form.reset();
+        } else {
+          const data = await res.json().catch(() => ({}));
+          submit.innerHTML = '<span>Send message</span><span class="k">⏎</span>';
+          hint.textContent = data?.errors?.[0]?.message || '✗ send failed — try email link above';
+        }
+      } catch {
+        submit.innerHTML = '<span>Send message</span><span class="k">⏎</span>';
+        hint.textContent = '✗ network error — try email link above';
+      }
     });
   }
 </script>

@@ -12,7 +12,7 @@ export type WorkItem = {
 export const WORK: WorkItem[] = [
   {
     slug: 'jewelry',
-    client: 'Luxury Jewelry Brand (Atelier Dacko)',
+    client: 'Custom Jewelry Brand (Atelier Dacko)',
     title: 'Shopify ring builder for a 14-page custom storefront',
     stack: ['Shopify', 'Liquid', 'Stripe', 'WordPress', 'SEO'],
     annotation: '// 14 pages · 200+ SKUs · 2yr engagement',
@@ -24,11 +24,11 @@ export const WORK: WorkItem[] = [
     slug: 'hubspot',
     client: 'AI Agency Client (NDA)',
     title: 'Custom HubSpot theme with reusable HubL modules',
-    stack: ['HubSpot', 'HubL', 'GTM', 'JavaScript', 'CSS'],
-    annotation: '// 8 pages · 90+ Lighthouse · -30% TTI',
+    stack: ['HubSpot', 'HubL', 'CRM', 'GitHub Actions', 'JavaScript'],
+    annotation: '// 8 pages · 90+ PageSpeed · -30% load time',
     snippet: 'hubl.module("hero", { variants: 4 })',
-    role: 'Theme rebuild · CRM forms',
-    body: 'Rebuilt a legacy HubSpot theme into a custom 8-page implementation with reusable HubL modules and CRM-connected forms. Improved maintainability and delivered 90+ PageSpeed scores with a 30% load-time improvement.',
+    role: 'Legacy-to-custom migration',
+    body: 'Migrated a legacy HubSpot site into a custom 8-page theme with full CRM integration — content mapping, page restructuring, and reusable HubL modules. Image optimization, lazy loading, and caching lifted PageSpeed past 90 and cut load time 30%. GitHub Actions CI runs automated linting before production deploys.',
   },
   {
     slug: 'tcg',
@@ -37,7 +37,7 @@ export const WORK: WorkItem[] = [
     stack: ['Shopify', 'Liquid', 'JSON', 'SEO', 'Security'],
     annotation: '// 400+ SKUs migrated · catalog standardized',
     snippet: 'catalog.migrate(legacy.json).normalize()',
-    role: 'Components · data migration',
-    body: 'Built collection layouts and custom product modules for a vintage gaming storefront. A 400+ item JSON migration standardized catalog data and removed manual formatting bottlenecks while improving discoverability with technical SEO.',
+    role: 'Components · data migration · SEO',
+    body: 'Built custom page layouts and product display modules for a 400+ item vintage gaming catalog. Bulk JSON migrations restructured the full catalog — cutting manual data entry and eliminating duplicate SKU errors. Technical SEO audits and security hardening improved search visibility across target keywords.',
   },
 ];

@@ -3,57 +3,48 @@ export type StackGroup = { label: string; items: StackItem[] };
 
 export const STACK: StackGroup[] = [
   {
-    label: 'CMS & E-Commerce',
+    label: 'Core',
     items: [
-      { name: 'Shopify',    note: '4+ yrs · 14-page+ themes' },
-      { name: 'HubSpot',    note: 'Custom themes · HubL' },
-      { name: 'Contentful', note: 'Certified Professional' },
-      { name: 'WordPress',  note: 'Legacy migrations' },
-    ],
-  },
-  {
-    label: 'Languages',
-    items: [
-      { name: 'JavaScript', note: 'Primary' },
+      { name: 'JavaScript', note: 'ES6+' },
       { name: 'TypeScript', note: 'Typed APIs' },
       { name: 'Python',     note: 'Scripts · tooling' },
-      { name: 'Sass',       note: 'Design systems' },
+      { name: 'React',      note: 'UI · hooks' },
     ],
   },
   {
-    label: 'Frameworks',
+    label: 'CMS & E-Commerce',
     items: [
-      { name: 'React',   note: 'UI · hooks' },
-      { name: 'Next.js', note: 'SSR · routing' },
-      { name: 'Node.js', note: 'APIs · CLIs' },
-      { name: 'Astro',   note: 'This site' },
-    ],
-  },
-  {
-    label: 'AI & Tooling',
-    items: [
-      { name: 'Claude',         note: 'Pair · refactors' },
-      { name: 'Cursor',         note: 'Daily driver' },
-      { name: 'GitHub Copilot', note: 'Inline assist' },
-      { name: 'Ollama',         note: 'Local inference' },
+      { name: 'Shopify',    note: 'Liquid · custom themes' },
+      { name: 'HubSpot',    note: 'HubL · CRM integration' },
+      { name: 'WordPress',  note: 'Elementor · migrations' },
+      { name: 'Contentful', note: 'Certified Professional' },
     ],
   },
   {
     label: 'Data & DevOps',
     items: [
-      { name: 'PostgreSQL',     note: 'Relational' },
-      { name: 'MongoDB',        note: 'Documents' },
-      { name: 'Docker',         note: 'Containers' },
-      { name: 'GitHub Actions', note: 'CI/CD' },
+      { name: 'PostgreSQL · MySQL', note: 'Relational' },
+      { name: 'MongoDB',            note: 'Documents' },
+      { name: 'Docker',             note: 'Containers' },
+      { name: 'Jest · Playwright',  note: 'Unit · E2E tests' },
     ],
   },
   {
-    label: 'Cloud & Tools',
+    label: 'AI & Tooling',
     items: [
-      { name: 'AWS',          note: 'S3 · Lambda · CF' },
-      { name: 'DigitalOcean', note: 'Droplets · Spaces' },
-      { name: 'Git',          note: 'Daily' },
-      { name: 'Figma',        note: 'Handoff · design' },
+      { name: 'Ollama',          note: 'KV cache · flash attn' },
+      { name: 'Claude Code CLI', note: 'Daily driver' },
+      { name: 'OpenAI Codex',    note: 'Inline assist' },
+      { name: 'MCP Servers',     note: 'Model Context Protocol' },
+    ],
+  },
+  {
+    label: 'Familiar',
+    items: [
+      { name: 'Java · Spring Boot', note: 'Microservices' },
+      { name: 'Headless Arch',      note: 'Composable CMS' },
+      { name: 'Figma',              note: 'Handoff · design' },
+      { name: 'Agile / Scrum',      note: 'Process' },
     ],
   },
 ];

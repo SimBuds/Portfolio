@@ -5,7 +5,8 @@
 /.astro
 /dist
 
-.env
+/.claude
 /.vscode
 
+.secrets
 AGENTS.md
