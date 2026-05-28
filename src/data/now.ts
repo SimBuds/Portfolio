@@ -32,9 +32,9 @@ export const NOW: NowItem[] = [
   },
   {
     cmd: '~/auto-agent $ docker compose up -d',
-    title: 'Auto-Agent — Mac mini M4 orchestration stack',
-    note: 'Hermes Agent + Claude API inference, Postgres/Redis memory, and a FastAPI capability server for AppleScript and iMessage automation.',
-    tags: ['Docker', 'FastAPI', 'Hermes', 'Postgres', 'Redis', 'AppleScript'],
+    title: 'Auto-Agent — Hermes + OpenClaw orchestration stack',
+    note: 'Hermes Agent + Claude API inference, Postgres/Redis memory, and a FastAPI capability server for Telegram, and Discord automation.',
+    tags: ['Docker', 'FastAPI', 'Hermes', 'Postgres', 'Redis'],
     status: 'deploying',
     day: 'd.18',
     body: 'Compose stack sized for 16GB unified memory: Hermes (~4G) plans against the Claude API, Postgres holds durable agent memory, Redis caches hot context, and a FastAPI capability server exposes AppleScript, iMessage, and system-control endpoints. Optional OpenClaw bridge wires Telegram and Discord in when needed.',
