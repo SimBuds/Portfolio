@@ -1,15 +1,15 @@
 :root {
-  --bg:        #0b0c0e;
-  --bg-2:      #111315;
-  --bg-3:      #16181b;
-  --line:      rgba(255,255,255,0.07);
-  --line-2:    rgba(255,255,255,0.12);
-  --fg:        #e8e9eb;
-  --fg-2:      #a8acb3;
-  --fg-3:      #6c7079;
-  --fg-4:      #45494f;
-  --accent:    oklch(0.86 0.19 128);
-  --accent-d:  oklch(0.72 0.18 128);
+  --bg:        #02040a; /* Deep OLED Black */
+  --bg-2:      #090e1a; /* Very Dark Navy for Cards */
+  --bg-3:      #111827; /* Dark Slate for Hovers */
+  --line:      rgba(255, 255, 255, 0.04);
+  --line-2:    rgba(255, 255, 255, 0.1);
+  --fg:        #f8fafc; /* Slate 50 */
+  --fg-2:      #e2e8f0; /* Slate 200 */
+  --fg-3:      #94a3b8; 
+  --fg-4:      #64748b; /* Slate 500 */
+  --accent:    #6366f1; /* Indigo 500 */
+  --accent-d:  #4338ca; /* Indigo 700 */
   --accent-bg: color-mix(in oklch, var(--accent) 14%, transparent);
 
   --pad-x: 40px;
