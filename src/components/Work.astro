@@ -21,6 +21,9 @@ import { WORK } from '../data/work';
         <article class="work-card reveal">
           <div class="work-visual">
             <img class="photo" src={`/work-${p.slug}.jpg`} alt={p.client} loading="lazy" decoding="async" />
+            {p.slug === 'hubspot' && (
+              <div class="coming-soon"><span>Coming soon</span></div>
+            )}
             <div class="work-anno">
               <div class="top">{p.annotation}</div>
               <div class="mid"><span class="prompt-4">$</span><span>{p.snippet}</span></div>
@@ -52,4 +55,25 @@ import { WORK } from '../data/work';
 <style>
   .prose { margin-top: 16px; color: var(--fg-2); line-height: 1.6; font-size: 14px; }
   .prose p { color: var(--fg-2) !important; }
+  .coming-soon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11, 12, 14, 0.62);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+  }
+  .coming-soon span {
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--rad-lg);
+    background: var(--bg-2);
+    color: var(--fg);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
 </style>
