@@ -26,8 +26,6 @@ import { WORK } from '../data/work';
             )}
             <div class="work-anno">
               <div class="top">{p.annotation}</div>
-              <div class="mid"><span class="prompt-4">$</span><span>{p.snippet}</span></div>
-              <div class="bot"><span class="dot dot-sm"></span>Live site available on request</div>
             </div>
           </div>
           <div class="work-text">
@@ -40,10 +38,6 @@ import { WORK } from '../data/work';
             <div class="prose"><p>{p.body}</p></div>
             <div class="work-tags">
               {p.stack.map((s) => <span class="tag">{s}</span>)}
-            </div>
-            <div class="work-foot">
-              <span class="muted-3">Live site available on request</span>
-              <a href="#contact" class="cta">request access <span class="arrow">→</span></a>
             </div>
           </div>
         </article>

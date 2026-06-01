@@ -5,8 +5,7 @@ import SectionHead from './SectionHead.astro';
 const lines = [
   { icon: '✦',  label: 'EMAIL',    value: SITE.email,    href: 'mailto:' + SITE.email },
   { icon: 'GH', label: 'GITHUB',   value: SITE.github,   href: 'https://' + SITE.github },
-  { icon: 'in', label: 'LINKEDIN', value: SITE.linkedin, href: 'https://' + SITE.linkedin },
-  { icon: '◐',  label: 'TZ',       value: SITE.tz + ' · ' + SITE.location, href: 'https://caseyhsu.com'},
+  { icon: 'in', label: 'LINKEDIN', value: SITE.linkedin, href: 'https://' + SITE.linkedin }
 ];
 ---
 
@@ -42,11 +41,11 @@ const lines = [
           <span class="muted-3">POST /f/maqdrbly</span>
         </div>
         <div class="contact-form-body">
-          <label for="cf-from">$ from</label>
-          <input id="cf-from" name="email" class="mono" type="email" placeholder="you@company.com" required />
+          <label for="cf-from">From:</label>
+          <input id="cf-from" name="email" class="mono" type="email" placeholder="your@email.com" required />
 
-          <label for="cf-msg">$ message</label>
-          <textarea id="cf-msg" name="message" placeholder="Tell me what's on your mind..." required rows="5"></textarea>
+          <label for="cf-msg">Message:</label>
+          <textarea id="cf-msg" name="message" placeholder="Your message!" required rows="5"></textarea>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="foot">
