@@ -1,6 +1,6 @@
 # HIDE ME
 /node_modules
-/package-lock.json
+package-lock.json
 
 /.astro
 /dist
