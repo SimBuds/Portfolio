@@ -11,13 +11,13 @@ import { SITE, NAV } from '../data/site';
       </div>
       <div class="footer-cols">
         <div>
-          <div class="footer-col-title">Site</div>
+          <div class="footer-col-title">Navigation</div>
           <ul class="footer-col-list">
             {NAV.map((n) => <li><a href={'#' + n.id}>{n.label}</a></li>)}
           </ul>
         </div>
         <div>
-          <div class="footer-col-title">Elsewhere</div>
+          <div class="footer-col-title">Links</div>
           <ul class="footer-col-list">
             <li><a href={'https://' + SITE.github} target="_blank" rel="noopener">GitHub</a></li>
             <li><a href={'https://' + SITE.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
@@ -37,10 +37,7 @@ import { SITE, NAV } from '../data/site';
     </div>
     <div class="footer-bot">
       <span>© 2026 {SITE.name} — all rights reserved</span>
-      <span class="muted-3">
-        <span class="dot dot-sm"></span>
-        Designed with Claude Design
-      </span>
+      <span class="muted-3"><span class="dot dot-sm"></span>Designed with Claude Design</span>
     </div>
   </div>
 </footer>

@@ -16,7 +16,7 @@ export const WORK: WorkItem[] = [
     stack: ['Shopify', 'Liquid', 'Stripe', 'WordPress', 'SEO'],
     annotation: '// 14 pages · 200+ SKUs · 2yr engagement',
     role: 'Sole developer · scoped to ship',
-    body: 'Migrated a WordPress portfolio into a 14+ page Shopify storefront and built a custom ring builder for stone, band, and size configuration. Now supports 200+ SKUs and 500+ monthly visitors, with a 2+ year ongoing engagement.',
+    body: 'Migrated a WordPress portfolio into a 14+ page Shopify storefront, with a custom ring builder for stone, band, and size configuration.',
   },
   {
     slug: 'hubspot',
@@ -25,7 +25,7 @@ export const WORK: WorkItem[] = [
     stack: ['HubSpot', 'HubL', 'CRM', 'GitHub Actions', 'JavaScript'],
     annotation: '// 8 pages · 90+ PageSpeed · -30% load time',
     role: 'Legacy-to-custom migration',
-    body: 'Migrated a legacy HubSpot site into a custom 8-page theme with full CRM integration — content mapping, page restructuring, and reusable HubL modules. Image optimization, lazy loading, and caching lifted PageSpeed past 90 and cut load time 30%. GitHub Actions CI runs automated linting before production deploys.',
+    body: 'Migrated a legacy HubSpot site into a custom 8-page theme with full CRM integration, page restructuring, and reusable HubL modules. Image optimization, and lazy loading.',
   },
   {
     slug: 'tcg',
@@ -34,6 +34,6 @@ export const WORK: WorkItem[] = [
     stack: ['Shopify', 'Liquid', 'JSON', 'SEO', 'Security'],
     annotation: '// 400+ SKUs migrated · catalog standardized',
     role: 'Components · data migration · SEO',
-    body: 'Built custom page layouts and product display modules for a 400+ item vintage gaming catalog. Bulk JSON migrations restructured the full catalog — cutting manual data entry and eliminating duplicate SKU errors. Technical SEO audits and security hardening improved search visibility across target keywords.',
+    body: 'Built custom page layouts and product display modules for a 400+ item vintage gaming catalog. Bulk JSON migrations restructured the full catalog — cutting manual data entry and eliminating duplicate SKU errors.',
   },
 ];

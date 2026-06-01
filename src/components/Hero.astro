@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 ---
 
 <section class="hero" id="top">
@@ -19,20 +20,28 @@
 
         <div class="hero-cta">
           <a href="#work" class="btn primary">
-            <span>See My Work⏎</span>
+            <span>See My Work</span><span class="k">⏎</span>
           </a>
           <a href="/resume.pdf" class="btn">
-            <span>My Resume⏎</span>
+            <span>My Resume</span><span class="k">⏎</span>
           </a>
           <a href="#contact" class="btn">
-            <span>Contact Me⏎</span>
+            <span>Contact Me</span><span class="k">⏎</span>
           </a>
         </div>
       </div>
 
       <div class="hero-photo">
         <div class="hero-photo-body">
-          <img class="photo hero-photo-img" src="/casey-hero.jpg" alt="Casey Hsu" width="1080" height="720" fetchpriority="high" decoding="async" />
+          <Image 
+            class="photo hero-photo-img" 
+            src="/casey-hero.jpg" 
+            alt="Casey Hsu" 
+            width={1080} 
+            height={720} 
+            loading="eager" 
+            fetchpriority="high" 
+          />
           <div class="photo-overlay-grad"></div>
           <div class="photo-meta">
             <div class="photo-meta-row mono"><span class="k">NAME</span><span>Casey Hsu</span></div>

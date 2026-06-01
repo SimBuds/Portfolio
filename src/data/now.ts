@@ -17,8 +17,8 @@ export const NOW: NowItem[] = [
     tags: ['Python', 'uv', 'Ollama', 'SQLite', 'Playwright', 'ATS'],
     status: 'building',
     day: 'd.42',
-    body: 'Scans public ATS sources across GTA and Remote-Canada. Local Ollama scores, drafts resumes and cover letters. No scraping, no bot submissions, no stored credentials.',
-    repo: 'https://github.com/SimBuds/Jobhunt',
+    body: 'Scans public ATS sources across GTA and Remote-Canada. Local Ollama scores, drafts resumes and cover letters. No scraping and no bot submissions.',
+    repo: 'https://github.com/SimBuds/Jobhunt'
   },
   {
     cmd: '~/seo-llm $ claude /seo-gen',
@@ -28,7 +28,7 @@ export const NOW: NowItem[] = [
     status: 'designing',
     day: 'd.30',
     body: 'Claude Code plans; Lint checks banned words, heading hierarchy, meta length, and schema; Google Search Central RSS triggers rule reviews.',
-    repo: 'https://github.com/SimBuds/SEO-LLM',
+    repo: 'https://github.com/SimBuds/SEO-LLM'
   },
   {
     cmd: '~/auto-agent $ docker compose up -d',
@@ -38,7 +38,7 @@ export const NOW: NowItem[] = [
     status: 'deploying',
     day: 'd.18',
     body: 'Hermes plans against the Claude API, Postgres holds durable memory, Redis caches context, and a FastAPI server exposes system-control endpoints.',
-    repo: 'https://github.com/SimBuds/Auto-Agent',
+    repo: 'https://github.com/SimBuds/Auto-Agent'
   },
   {
     cmd: '~/ai $ ./build-qwen',
@@ -48,6 +48,6 @@ export const NOW: NowItem[] = [
     status: 'tuning',
     day: 'd.10',
     body: 'Three siblings built from a shared prompts/ + memory/ + knowledge/ tree. Project overlays inject at request time instead of baking in.',
-    repo: 'https://github.com/SimBuds/Ollama-LLM-Prompts',
+    repo: 'https://github.com/SimBuds/Ollama-LLM-Prompts'
   },
 ];

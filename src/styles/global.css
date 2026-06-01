@@ -175,7 +175,7 @@ body > * { position: relative; z-index: 1; }
 .big-title p { margin-top: 14px; color: var(--fg-2); font-size: 15px; max-width: 620px; line-height: 1.55; }
 
 /* Work */
-.work-list { display: flex; flex-direction: column; gap: 28px; }
+.work-list { display: flex; flex-direction: column; gap: 20px; }
 .work-card { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); background: var(--bg-2); position: relative; align-items: stretch; border: 1px solid var(--line); border-radius: var(--rad-lg); overflow: hidden; transition: border-color 0.25s; }
 .work-card:hover { border-color: var(--accent); }
 .work-card:hover .work-text h3 { color: var(--accent); }

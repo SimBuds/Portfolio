@@ -1,10 +1,11 @@
 ---
 import SectionHead from './SectionHead.astro';
+import { Image } from 'astro:assets';
 
 const stats = [
-  { k: '3+ yrs', v: 'shipping production code' },
-  { k: '20+',    v: 'page custom Shopify themes' },
-  { k: '400+',   v: 'SKUs migrated · normalized' },
+  { k: '2+ yrs', v: 'Shipping production code' },
+  { k: '30+',    v: 'Custom Shopify pages' },
+  { k: '500+',   v: 'SKUs migrated · normalized' },
   { k: '90+',    v: 'Lighthouse · -30% TTI' },
 ];
 ---
@@ -15,31 +16,23 @@ const stats = [
       idx="03"
       kicker="// about"
       inlineDescr
-      descr="3 years in code · 9 years chef · ships quality"
-    />
+      descr="3 years in code · ships quality"/>
 
     <div class="about-grid">
       <div class="about-photo reveal">
         <div class="about-photo-img">
-          <img class="photo" src="/casey-about.jpg" alt="Casey Hsu portrait" width="1080" height="1620" loading="lazy" decoding="async" />
+          <Image class="photo" src="/casey-about.jpg" alt="Casey Hsu portrait" width={1080} height={1620} />
         </div>
       </div>
 
       <div class="about-text reveal">
         <h2>Three years in <span class="accent">code</span>, nine years in <span class="accent">kitchens.</span> The discipline carries over.</h2>
-
         <div class="about-para">
-          <p>
-            Most of my work today is in <strong>Shopify</strong>, <strong>HubSpot CMS</strong>, and <strong>WordPress</strong>
-            with React/Next.js frontends and Node.js backends. The day-to-day is JavaScript, TypeScript, Docker, and modern AI-assisted workflows.
-          </p>
-          <p>
-            Before tech, I spent nine years leading culinary teams. It taught me how to stay calm under pressure, communicate clearly, and deliver on deadlines.
-            I'm a <strong>George Brown</strong> Computer Programming and Analysis honours grad and a <strong>Contentful Certified Professional</strong>.
-          </p>
-          <p class="muted">
-            Currently open to full-time roles in the Greater Toronto Area, including hybrid and on-site opportunities.
-          </p>
+          <p>Most of my work today is in <strong>CMS</strong>, platforms, with React/Astro frontends. 
+            The day-to-day is JavaScript, Python, and modern AI-assisted workflows.</p>
+          <p>Before tech, I spent nine years leading culinary teams. It taught me how to stay calm under pressure, communicate clearly, and deliver on deadlines.
+            I'm a <strong>George Brown</strong> Computer Programming and Analysis honours grad and a <strong>Contentful Certified Professional</strong>.</p>
+          <p class="muted">Currently open to full-time roles in the Greater Toronto Area, including hybrid and on-site opportunities.</p>
         </div>
 
         <div class="stats-strip">
