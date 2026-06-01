@@ -1,12 +1,7 @@
 # HIDE ME
 /node_modules
 package-lock.json
-
-/.astro
 /dist
-
+/.astro
 /.claude
 /.vscode
-
-.secrets
-AGENTS.md
