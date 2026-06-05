@@ -11,7 +11,7 @@ export type NowItem = {
 
 export const NOW: NowItem[] = [
   {
-    cmd: '~/jobhunt $ jobhunt scan',
+    cmd: '~/Jobhunt $ jobhunt scan',
     title: 'Job Hunt AI Buddy — local-first CLI for the GTA',
     note: 'Pulls public ATS APIs, scores against a verified resume, and drafts tailored docs. You submit every application yourself.',
     tags: ['Python', 'uv', 'Ollama', 'SQLite', 'Playwright', 'ATS'],
@@ -21,7 +21,7 @@ export const NOW: NowItem[] = [
     repo: 'https://github.com/SimBuds/Jobhunt'
   },
   {
-    cmd: '~/seo-llm $ claude /seo-gen',
+    cmd: '~/Seo-llm $ claude /seo-gen',
     title: 'LLM-SEO — content pipeline with Google safeguards',
     note: 'Hybrid Claude Code + local-model SEO stack. Briefs with lint guards against 2026 core-update drift.',
     tags: ['Claude Code', 'Ollama', 'Postgres', 'JSON-LD'],
@@ -31,7 +31,7 @@ export const NOW: NowItem[] = [
     repo: 'https://github.com/SimBuds/SEO-LLM'
   },
   {
-    cmd: '~/auto-agent $ docker compose up -d',
+    cmd: '~/Auto-agent $ docker compose up -d',
     title: 'Auto-Agent — Hermes + OpenClaw stack',
     note: 'Hermes Agent + Claude API inference, Postgres/Redis memory, and a FastAPI capability server for Telegram automation.',
     tags: ['Hermes', 'OpenClaw', 'Redis', 'Docker', 'FastAPI'],
@@ -41,13 +41,13 @@ export const NOW: NowItem[] = [
     repo: 'https://github.com/SimBuds/Auto-Agent'
   },
   {
-    cmd: '~/ai $ ./build-qwen',
+    cmd: '~/Local-LLM $ ./build-gemma',
     title: 'AI Context Stack — three custom Ollama models',
     note: 'Qwen-custom, granite-custom, and gemma-custom from one layered Markdown stack.',
     tags: ['Qwen3.5:9b', 'Granite4.1:8b', 'Gemma4:e4b', 'Modelfile'],
     status: 'tuning',
     day: 'd.10',
     body: 'Three siblings built from a shared prompts/ + memory/ + knowledge/ tree. Project overlays inject at request time instead of baking in.',
-    repo: 'https://github.com/SimBuds/Ollama-LLM-Prompts'
+    repo: 'https://github.com/SimBuds/Local-LLM'
   },
 ];
