@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Casey Hsu',
-  title: 'Casey Hsu — Full-Stack Developer',
-  description: 'Toronto-based full-stack developer building production storefronts, CMS themes, and platform migrations.',
+  title: 'Casey Hsu — CMS Developer',
+  description: 'Toronto-based CMS developer and Contentful Certified Professional building production storefronts, CMS themes, and platform migrations.',
   url: 'https://caseyhsu.com',
   email: 'casey-hsu@outlook.com',
   github: 'github.com/simbuds',
