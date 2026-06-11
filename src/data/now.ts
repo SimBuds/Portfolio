@@ -44,7 +44,7 @@ export const NOW: NowItem[] = [
     cmd: '~/Local-LLM $ ./build-gemma',
     title: 'AI Context Stack — three custom Ollama models',
     note: 'Qwen-custom, granite-custom, and gemma-custom from one layered Markdown stack.',
-    tags: ['Qwen3.5:9b', 'Granite4.1:8b', 'Gemma4:e4b', 'Modelfile'],
+    tags: ['Qwen3.6', 'Granite4.1', 'Gemma4', 'Modelfile'],
     status: 'tuning',
     day: 'd.10',
     body: 'Qwen, granite, and gemma siblings built from a shared prompts/ + memory/ + knowledge/ tree, with project overlays injected at request time. An eval suite benchmarks quality, tokens/sec, and VRAM for a 10 GB GPU.',

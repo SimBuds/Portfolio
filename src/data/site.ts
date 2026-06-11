@@ -1,13 +1,13 @@
 export const SITE = {
   name: 'Casey Hsu',
-  title: 'Casey Hsu — CMS Developer',
-  description: 'Toronto-based CMS developer and Contentful Certified Professional building production storefronts, CMS themes, and platform migrations.',
+  title: 'Casey Hsu — CMS & E-Commerce Developer',
+  description: 'Toronto-based CMS & e-commerce developer and Contentful Certified Professional building production storefronts, CMS themes, and platform migrations.',
   url: 'https://caseyhsu.com',
   email: 'casey-hsu@outlook.com',
   github: 'github.com/simbuds',
   linkedin: 'linkedin.com/in/casey-hsu',
   location: 'Toronto, ON',
-  tz: 'UTC-04'
+  tz: 'ET'
 };
 
 export const NAV = [

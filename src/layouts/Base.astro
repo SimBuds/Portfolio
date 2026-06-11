@@ -10,14 +10,14 @@ interface Props {
 const { title = SITE.title, description = SITE.description } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
-const ogImage = new URL('/og-image.png', SITE.url).toString();
+const ogImage = new URL('/casey-hero.jpg', SITE.url).toString();
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: SITE.name,
   url: SITE.url,
-  jobTitle: 'CMS Developer',
+  jobTitle: 'CMS & E-Commerce Developer',
   email: `mailto:${SITE.email}`,
   address: { '@type': 'PostalAddress', addressLocality: SITE.location },
   sameAs: [`https://${SITE.github}`, `https://${SITE.linkedin}`],
