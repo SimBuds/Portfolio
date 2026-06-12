@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://caseyhsu.com/sitemap-index.xml
