@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../data/site';
+import heroPhoto from '../assets/casey-hero.jpg';
 
 interface Props {
   title?: string;
@@ -10,7 +11,7 @@ interface Props {
 const { title = SITE.title, description = SITE.description } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
-const ogImage = new URL('/casey-hero.jpg', SITE.url).toString();
+const ogImage = new URL(heroPhoto.src, SITE.url).toString();
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -29,6 +30,7 @@ const personSchema = {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline>document.documentElement.classList.add('js');</script>
   <meta name="description" content={description} />
   <meta name="theme-color" content="#0b0c0e" />
   <title>{title}</title>
@@ -48,7 +50,7 @@ const personSchema = {
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
 
-  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,6 +60,7 @@ const personSchema = {
   />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <slot />
 
   <script>

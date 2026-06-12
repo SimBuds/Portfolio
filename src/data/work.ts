@@ -2,38 +2,44 @@ export type WorkItem = {
   slug: string;
   client: string;
   title: string;
+  dates: string;
+  role: string;
+  summary: string;
   stack: string[];
   annotation: string;
-  role: string;
-  body: string;
+  nda?: boolean;
 };
 
 export const WORK: WorkItem[] = [
   {
     slug: 'jewelry',
-    client: 'Custom Jewelry Brand (Atelier Dacko)',
-    title: 'Shopify ring builder for a 14-page custom storefront',
-    stack: ['Shopify', 'Liquid', 'WordPress', 'SEO', 'Contentful'],
-    annotation: '// 14 pages · 200+ SKUs · 3yr engagement',
-    role: 'Sole developer · scoped to ship',
-    body: 'Migrated a WordPress site into a 14+ page Shopify storefront, integrating and customizing a third-party ring builder for stone, band, and size configuration. Now implementing Contentful for the brand’s content.',
+    client: 'Atelier Dacko · Custom Jewelry Brand',
+    title: 'WordPress → Shopify migration with a custom ring builder',
+    dates: '2023 – Present',
+    role: 'Shopify / E-Commerce Developer',
+    summary: '14+ page storefront on the Dawn theme with a third-party ring builder customized for stone, band, and size — 200+ SKUs, sole developer and main client contact, now implementing Contentful.',
+    stack: ['Shopify', 'Liquid', 'Contentful', 'SEO'],
+    annotation: '// 14+ pages · 200+ SKUs · 3yr engagement',
   },
   {
     slug: 'hubspot',
     client: 'SEO AI Agency (NDA)',
-    title: 'Custom HubSpot theme with reusable HubL modules',
-    stack: ['HubSpot', 'HubL', 'CRM', 'Figma', 'JavaScript'],
+    title: 'Figma-to-HubSpot theme with reusable HubL modules',
+    dates: 'Jan – Apr 2026',
+    role: 'CMS Developer',
+    summary: 'Custom 8-page theme with CRM roles and permissions and a month of post-launch QA — image optimization, lazy loading, and caching pushed PageSpeed above 90.',
+    stack: ['HubSpot', 'HubL', 'CRM', 'Figma'],
     annotation: '// 8 pages · 90+ PageSpeed · -30% load time',
-    role: 'Figma-to-HubSpot build · CRM setup',
-    body: 'Turned Figma designs into a custom 8-page HubSpot theme with reusable HubL modules, CRM setup with team roles and permissions, and a month of post-launch QA. Image optimization, lazy loading, and caching pushed PageSpeed above 90.',
+    nda: true,
   },
   {
     slug: 'tcg',
     client: 'Vintage Gaming Retailer (NDA)',
-    title: 'WordPress rebuild & 400+ item catalog migration',
-    stack: ['WordPress', 'Elementor', 'JSON', 'SEO', 'Security'],
+    title: '400+ item catalog migration & Elementor rebuild',
+    dates: 'Jan – May 2024',
+    role: 'WordPress Developer',
+    summary: 'Rebuilt product pages in Elementor and wrote a JSON validation script that enforced product rules during the catalog migration — catching duplicate SKUs before import.',
+    stack: ['WordPress', 'Elementor', 'SEO', 'Security'],
     annotation: '// 400+ SKUs migrated · catalog standardized',
-    role: 'Rebuild · data migration · SEO',
-    body: 'Took over a 400+ item WordPress e-commerce store, rebuilding product pages in Elementor with hands-on HTML and CSS. A JSON validation script enforced product rules during the catalog migration — catching duplicate SKU errors before import.',
   },
 ];

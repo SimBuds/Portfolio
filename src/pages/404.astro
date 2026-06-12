@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base title={`404 — Page not found · ${SITE.name}`} description="Page not found.">
+  <div class="page">
+    <main id="main" class="nf">
+      <div class="container">
+        <p class="label">// error</p>
+        <h1 class="nf-code">404<span class="accent">.</span></h1>
+        <p class="nf-sub">This page doesn't exist — or it shipped somewhere else.</p>
+        <p class="nf-cmd mono"><span class="accent">$</span> cd ~ <span class="muted-3"># back to safety</span></p>
+        <div class="nf-cta">
+          <a href="/" class="btn primary"><span>Back home</span><span class="k">⏎</span></a>
+          <a href="/#contact" class="btn"><span>Contact me</span><span class="k">⏎</span></a>
+        </div>
+      </div>
+    </main>
+  </div>
+</Base>
+
+<style>
+  .nf { min-height: 80vh; display: flex; align-items: center; }
+  .nf-code { font-size: clamp(72px, 14vw, 160px); letter-spacing: -0.04em; margin-top: 12px; }
+  .nf-sub { margin-top: 16px; color: var(--fg-2); font-size: 17px; max-width: 460px; line-height: 1.65; }
+  .nf-cmd { margin-top: 20px; font-size: 13px; color: var(--fg-3); }
+  .nf-cta { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+</style>

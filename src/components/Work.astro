@@ -1,7 +1,15 @@
 ---
 import SectionHead from './SectionHead.astro';
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { WORK } from '../data/work';
+import workJewelry from '../assets/work-jewelry.jpg';
+import workTcg from '../assets/work-tcg.jpg';
+
+const WORK_IMAGES: Record<string, ImageMetadata> = {
+  jewelry: workJewelry,
+  tcg: workTcg,
+};
 ---
 
 <section class="section" id="work">
@@ -20,15 +28,31 @@ import { WORK } from '../data/work';
       {WORK.map((p) => (
         <article class="work-card reveal">
           <div class="work-visual">
-            <Image 
-              class="photo" 
-              src={`/work-${p.slug}.jpg`} 
-              alt={p.client} 
-              width={800} 
-              height={500} 
-            />
-            {p.slug === 'hubspot' && (
-              <div class="coming-soon"><span>Coming soon</span></div>
+            {p.nda ? (
+              <div class="wf" aria-hidden="true">
+                <div class="wf-chrome">
+                  <span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span>
+                  <span class="wf-label mono">{p.slug}-theme/</span>
+                </div>
+                <div class="wf-body">
+                  <div class="wf-nav"><span></span><span></span><span></span></div>
+                  <div class="wf-hero">
+                    <span class="wf-line w60"></span>
+                    <span class="wf-line w40"></span>
+                    <span class="wf-btn"></span>
+                  </div>
+                  <div class="wf-cols"><span></span><span></span><span></span></div>
+                </div>
+                <div class="wf-caption mono">// visuals under NDA</div>
+              </div>
+            ) : (
+              <Image
+                class="photo"
+                src={WORK_IMAGES[p.slug]}
+                alt={p.client}
+                width={800}
+                height={500}
+              />
             )}
             <div class="work-anno">
               <div class="top">{p.annotation}</div>
@@ -39,9 +63,11 @@ import { WORK } from '../data/work';
               <span class="accent">{p.client}</span>
               <span>·</span>
               <span>{p.role}</span>
+              <span>·</span>
+              <span>{p.dates}</span>
             </div>
             <h3>{p.title}</h3>
-            <div class="prose"><p>{p.body}</p></div>
+            <div class="prose"><p>{p.summary}</p></div>
             <div class="work-tags">
               {p.stack.map((s) => <span class="tag">{s}</span>)}
             </div>
@@ -55,25 +81,22 @@ import { WORK } from '../data/work';
 <style>
   .prose { margin-top: 16px; color: var(--fg-2); line-height: 1.6; font-size: 14px; }
   .prose p { color: var(--fg-2) !important; }
-  .coming-soon {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(11, 12, 14, 0.62);
-    backdrop-filter: blur(2px);
-    z-index: 2;
-  }
-  .coming-soon span {
-    padding: 8px 16px;
-    border: 1px solid var(--line);
-    border-radius: var(--rad-lg);
-    background: var(--bg-2);
-    color: var(--fg);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+
+  /* NDA wireframe placeholder */
+  .wf { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 12px; padding: 18px; background: var(--bg-3); }
+  .wf-chrome { display: flex; align-items: center; gap: 6px; }
+  .wf-dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--line-2); }
+  .wf-label { margin-left: 8px; font-size: 10px; color: var(--fg-4); }
+  .wf-body { flex: 1; display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--line-2); border-radius: 8px; padding: 12px; min-height: 0; }
+  .wf-nav { display: flex; gap: 6px; }
+  .wf-nav span { height: 6px; flex: 0 0 36px; border-radius: 3px; background: var(--line-2); }
+  .wf-nav span:first-child { background: var(--accent); opacity: 0.7; }
+  .wf-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 8px; min-height: 0; }
+  .wf-line { height: 8px; border-radius: 4px; background: var(--line-2); }
+  .wf-line.w60 { width: 60%; }
+  .wf-line.w40 { width: 40%; }
+  .wf-btn { width: 64px; height: 18px; border-radius: 4px; background: var(--accent-bg); border: 1px solid var(--accent); margin-top: 4px; }
+  .wf-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; height: 34px; flex: none; }
+  .wf-cols span { border: 1px solid var(--line-2); border-radius: 6px; background: rgba(255,255,255,0.02); }
+  .wf-caption { font-size: 10px; color: var(--fg-4); letter-spacing: 0.04em; }
 </style>

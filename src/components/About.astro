@@ -1,6 +1,7 @@
 ---
 import SectionHead from './SectionHead.astro';
 import { Image } from 'astro:assets';
+import aboutPhoto from '../assets/casey-about.jpg';
 
 const stats = [
   { k: '3+ yrs', v: 'Shipping production code' },
@@ -21,7 +22,7 @@ const stats = [
     <div class="about-grid">
       <div class="about-photo reveal">
         <div class="about-photo-img">
-          <Image class="photo" src="/casey-about.jpg" alt="Casey Hsu portrait" width={1080} height={1620} />
+          <Image class="photo" src={aboutPhoto} alt="Casey Hsu portrait" width={1080} height={1620} />
         </div>
       </div>
 

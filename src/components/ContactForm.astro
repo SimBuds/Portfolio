@@ -64,6 +64,14 @@ const lines = [
   const submit = document.getElementById('cf-submit');
   const hint = document.getElementById('cf-hint');
   if (form && submit && hint) {
+    form.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        form.reset();
+        hint.textContent = 'Enter to send · Esc to cancel';
+        submit.innerHTML = '<span>Send message</span><span class="k">⏎</span>';
+        (document.activeElement as HTMLElement | null)?.blur();
+      }
+    });
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       submit.innerHTML = '<span>Sending…</span>';

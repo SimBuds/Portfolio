@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import heroPhoto from '../assets/casey-hero.jpg';
 ---
 
 <section class="hero" id="top">
@@ -33,14 +34,14 @@ import { Image } from 'astro:assets';
 
       <div class="hero-photo">
         <div class="hero-photo-body">
-          <Image 
-            class="photo hero-photo-img" 
-            src="/casey-hero.jpg" 
-            alt="Casey Hsu" 
-            width={1080} 
-            height={720} 
-            loading="eager" 
-            fetchpriority="high" 
+          <Image
+            class="photo hero-photo-img"
+            src={heroPhoto}
+            alt="Casey Hsu, CMS & e-commerce developer"
+            width={1080}
+            height={720}
+            loading="eager"
+            fetchpriority="high"
           />
           <div class="photo-overlay-grad"></div>
           <div class="photo-meta">
