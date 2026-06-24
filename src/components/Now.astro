@@ -7,9 +7,9 @@ import { NOW } from '../data/now';
   <div class="container">
     <SectionHead
       idx="01"
-      kicker="// now"
+      kicker="now"
       inlineDescr
-      descr="This is what I'm currently working on"/>
+      descr="Currently working on"/>
 
     <div class="big-title">
       <h2>Currently <span class="accent">building.</span></h2>
@@ -22,7 +22,7 @@ import { NOW } from '../data/now';
             <span class="cmd">{it.cmd}</span>
             <span class="status">
               <span class="dot dot-sm"></span>
-              {it.status} · {it.day}
+              {it.status}
             </span>
           </div>
           <div class="now-card-body">
@@ -41,29 +41,3 @@ import { NOW } from '../data/now';
     </div>
   </div>
 </section>
-
-<style>
-  .now-card { height: 100%; display: flex; flex-direction: column; }
-  .now-card-body { display: flex; flex-direction: column; gap: 14px; flex: 1; }
-  .now-title { margin: 0; }
-  .now-note { margin: 0; }
-  .now-repo { margin-top: auto !important; }
-  .prose { color: var(--fg-2); line-height: 1.6; font-size: 14px; margin: 0; }
-  .prose p { color: var(--fg-2) !important; margin: 0; }
-  .now-tags { margin: 0; }
-  .now-repo {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin: 4px 0 2px;
-    font-family: var(--mono, ui-monospace, monospace);
-    font-size: 13px;
-    color: var(--fg-2);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--fg-3, var(--fg-2));
-    padding-bottom: 1px;
-    width: fit-content;
-  }
-  .now-repo:hover { color: var(--accent, var(--fg-1)); border-bottom-color: var(--accent, var(--fg-1)); }
-  .now-repo .arrow { opacity: 0.7; }
-</style>

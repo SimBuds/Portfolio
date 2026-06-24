@@ -13,14 +13,25 @@ const lines = [
   <div class="container">
     <SectionHead
       idx="05"
-      kicker="// contact"
+      kicker="contact"
       inlineDescr
       descr="Available now"/>
 
     <div class="contact-grid">
       <div class="left reveal">
         <h2>Let's build something <span class="em">worth shipping</span>.</h2>
-        <p>Have a project in mind, a role to fill, or just want to say hello? I'm always open to new opportunities and interesting conversations.</p>
+        <p>Send over the role, project, or platform problem you are trying to solve. I am open to CMS, e-commerce, frontend, and full-stack work across Canada.</p>
+
+        <div class="contact-summary">
+          <div>
+            <span class="k">Best fit</span>
+            <span>Shopify, HubSpot, WordPress, migrations, QA, launches</span>
+          </div>
+          <div>
+            <span class="k">Reply window</span>
+            <span>Usually within one business day</span>
+          </div>
+        </div>
 
         <div class="contact-lines">
           {lines.map((l) => (
@@ -36,21 +47,21 @@ const lines = [
 
       <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/maqdrbly" method="POST">
         <div class="contact-form-chrome">
-          <span><span class="dot dot-sm"></span>contact_form.astro</span>
-          <span class="muted-3">POST /f/maqdrbly</span>
+          <span><span class="dot dot-sm"></span>New message</span>
+          <span class="muted-3">Secure Formspree relay</span>
         </div>
         <div class="contact-form-body">
-          <label for="cf-from">From:</label>
-          <input id="cf-from" name="email" class="mono" type="email" placeholder="your@email.com" required />
+          <label for="cf-from">Email</label>
+          <input id="cf-from" name="email" class="mono" type="email" placeholder="you@company.com" required />
 
-          <label for="cf-msg">Message:</label>
-          <textarea id="cf-msg" name="message" placeholder="Your message!" required rows="5"></textarea>
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" placeholder="Tell me what you are building, migrating, hiring for, or trying to fix." required rows="6"></textarea>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="foot">
-            <span class="hint" id="cf-hint">Enter to send · Esc to cancel</span>
+            <span class="hint" id="cf-hint">Protected by spam check</span>
             <button type="submit" class="btn primary" id="cf-submit">
-              <span>Send message</span><span class="k">⏎</span>
+              <span>Send message</span><span class="k">→</span>
             </button>
           </div>
         </div>
@@ -67,8 +78,8 @@ const lines = [
     form.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         form.reset();
-        hint.textContent = 'Enter to send · Esc to cancel';
-        submit.innerHTML = '<span>Send message</span><span class="k">⏎</span>';
+        hint.textContent = 'Protected by a hidden spam check';
+        submit.innerHTML = '<span>Send message</span><span class="k">→</span>';
         (document.activeElement as HTMLElement | null)?.blur();
       }
     });
@@ -83,16 +94,16 @@ const lines = [
         });
         if (res.ok) {
           submit.innerHTML = '<span>Delivered ✓</span>';
-          hint.textContent = '✓ delivered — talk soon';
+          hint.textContent = 'Delivered - I will reply by email';
           form.reset();
         } else {
           const data = await res.json().catch(() => ({}));
-          submit.innerHTML = '<span>Send message</span><span class="k">⏎</span>';
-          hint.textContent = data?.errors?.[0]?.message || '✗ send failed — try email link above';
+          submit.innerHTML = '<span>Send message</span><span class="k">→</span>';
+          hint.textContent = data?.errors?.[0]?.message || 'Send failed - try the email link';
         }
       } catch {
-        submit.innerHTML = '<span>Send message</span><span class="k">⏎</span>';
-        hint.textContent = '✗ network error — try email link above';
+        submit.innerHTML = '<span>Send message</span><span class="k">→</span>';
+        hint.textContent = 'Network error - try the email link';
       }
     });
   }
