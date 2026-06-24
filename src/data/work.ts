@@ -7,39 +7,37 @@ export type WorkItem = {
   summary: string;
   stack: string[];
   annotation: string;
-  nda?: boolean;
 };
 
 export const WORK: WorkItem[] = [
   {
     slug: 'jewelry',
     client: 'Atelier Dacko · Custom Jewelry Brand',
-    title: 'WordPress → Shopify migration with a custom ring builder',
-    dates: '2023 – Present',
-    role: 'Shopify / E-Commerce Developer',
-    summary: '14+ page storefront on the Dawn theme with a third-party ring builder customized for stone, band, and size — 200+ SKUs, sole developer and main client contact, now implementing Contentful.',
-    stack: ['Shopify', 'Liquid', 'Contentful', 'SEO'],
-    annotation: '// 14+ pages · 200+ SKUs · 3yr engagement',
+    title: 'WordPress to Shopify migration with an in-progress ring builder',
+    dates: 'Apr 2023 - Present',
+    role: 'CMS / E-commerce Developer',
+    summary: 'Redesigned the brand portfolio in WordPress and Elementor, then migrated it to a custom 16+ page Shopify storefront on a customized Dawn 2.0 theme. Sole developer and client contact, with product/catalog assets moved to AWS and the ring-builder configurator still in progress.',
+    stack: ['Shopify', 'Liquid', 'WordPress', 'AWS', 'SEO'],
+    annotation: '// 16+ pages · 3+ years · sole developer',
   },
   {
     slug: 'hubspot',
-    client: 'SEO AI Agency (NDA)',
+    client: 'SEO AI Marketing Agency',
     title: 'Figma-to-HubSpot theme with reusable HubL modules',
-    dates: 'Jan – Apr 2026',
+    dates: 'Jan - Apr 2026',
     role: 'CMS Developer',
-    summary: 'Custom 8-page theme with CRM roles and permissions and a month of post-launch QA — image optimization, lazy loading, and caching pushed PageSpeed above 90.',
+    summary: 'Built a custom 8-page HubSpot CMS site from Figma designs, with reusable editor-configurable HubL modules, CRM roles and permissions, launch support, and a month of QA. Image optimization, lazy loading, and caching cut page load time 30% and kept PageSpeed above 90.',
     stack: ['HubSpot', 'HubL', 'CRM', 'Figma'],
     annotation: '// 8 pages · 90+ PageSpeed · -30% load time',
-    nda: true,
   },
   {
     slug: 'tcg',
-    client: 'Vintage Gaming Retailer (NDA)',
-    title: '400+ item catalog migration & Elementor rebuild',
-    dates: 'Jan – May 2024',
-    role: 'WordPress Developer',
-    summary: 'Rebuilt product pages in Elementor and wrote a JSON validation script that enforced product rules during the catalog migration — catching duplicate SKUs before import.',
-    stack: ['WordPress', 'Elementor', 'SEO', 'Security'],
-    annotation: '// 400+ SKUs migrated · catalog standardized',
+    client: 'Geeked Out Goods',
+    title: '400+ item Shopify catalog management and CSV validation',
+    dates: 'Jan - May 2024',
+    role: 'Shopify Developer',
+    summary: 'Managed inventory and the product catalog for a Shopify vintage-gaming store with 400+ items, owning product-detail content, site updates, new product listings, and basic on-page SEO. Built a CSV sanitizing and validation pipeline to catch feed errors before import.',
+    stack: ['Shopify', 'CSV', 'Catalog', 'SEO'],
+    annotation: '// 400+ items · CSV validation · catalog updates',
   },
 ];

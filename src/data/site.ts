@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Casey Hsu',
-  title: 'Casey Hsu — CMS & E-Commerce Developer',
-  description: 'Toronto-based CMS & e-commerce developer and Contentful Certified Professional building production storefronts, CMS themes, and platform migrations.',
+  title: 'Casey Hsu - CMS & E-commerce Developer',
+  description: 'Toronto-based CMS and e-commerce developer building Shopify storefronts, HubSpot CMS themes, and WordPress migrations, with Contentful certification and local AI tooling.',
   url: 'https://caseyhsu.com',
   email: 'casey-hsu@outlook.com',
   github: 'github.com/simbuds',
