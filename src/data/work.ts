@@ -12,7 +12,7 @@ export type WorkItem = {
 export const WORK: WorkItem[] = [
   {
     slug: 'jewelry',
-    client: 'Atelier Dacko · Custom Jewelry Brand',
+    client: 'Atelier Dacko',
     title: 'WordPress to Shopify migration with an in-progress ring builder',
     dates: 'Apr 2023 - Present',
     role: 'CMS / E-commerce Developer',
