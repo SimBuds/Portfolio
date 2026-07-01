@@ -22,7 +22,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: 'hubspot',
-    client: 'SEO AI Marketing Agency',
+    client: 'Neurative',
     title: 'Figma-to-HubSpot theme with reusable HubL modules',
     dates: 'Jan - Apr 2026',
     role: 'CMS Developer',
