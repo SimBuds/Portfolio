@@ -8,7 +8,7 @@ export const STACK: StackGroup[] = [
       { name: 'JavaScript · TypeScript', note: 'ES6+ · typed' },
       { name: 'React · Next.js', note: 'UI · SSR' },
       { name: 'Node.js · Express', note: 'REST APIs' },
-      { name: 'Python', note: 'Scripts · tooling' },
+      { name: 'Python', note: 'Automation · AI tooling' },
     ],
   },
   {
@@ -21,6 +21,26 @@ export const STACK: StackGroup[] = [
     ],
   },
   {
+    label: 'AI & Tooling',
+    items: [
+      { name: 'Ollama',          note: 'KV cache · flash attn' },
+      { name: 'Claude API',      note: 'Agents · structured output' },
+      { name: 'Claude Code CLI', note: 'Daily driver' },
+      { name: 'FastAPI',         note: 'Project backends' },
+      { name: 'OpenAI Codex',    note: 'Inline assist' },
+    ],
+  },
+  {
+    label: 'SEO & Analytics',
+    items: [
+      { name: 'Technical SEO',   note: 'Redirects · sitemaps' },
+      { name: 'Core Web Vitals', note: 'LCP · CLS · INP' },
+      { name: 'JSON-LD',         note: 'Structured data' },
+      { name: 'Search Console',  note: 'Indexing · queries' },
+      { name: 'GA4 · Google Ads', note: 'Traffic · campaigns' },
+    ],
+  },
+  {
     label: 'Data & DevOps',
     items: [
       { name: 'PostgreSQL · MySQL', note: 'Relational' },
@@ -29,16 +49,7 @@ export const STACK: StackGroup[] = [
       { name: 'GitHub Actions',     note: 'CI/CD' },
       { name: 'Jest · Playwright',  note: 'Unit · E2E tests' },
       { name: 'AWS · Azure',        note: 'Cloud services' },
-    ],
-  },
-  {
-    label: 'AI & Tooling',
-    items: [
-      { name: 'Ollama',          note: 'KV cache · flash attn' },
-      { name: 'Claude Code CLI', note: 'Daily driver' },
-      { name: 'Claude API',      note: 'Agents · structured output' },
-      { name: 'FastAPI',         note: 'Project backends' },
-      { name: 'OpenAI Codex',    note: 'Inline assist' },
+      { name: 'nginx · DigitalOcean', note: 'Self-hosted deploys' },
     ],
   },
   {
@@ -46,6 +57,7 @@ export const STACK: StackGroup[] = [
     items: [
       { name: 'Java · Spring Boot', note: 'Coursework' },
       { name: 'Angular',           note: 'Coursework · light use' },
+      { name: 'React Native',      note: 'Capstone mobile app' },
       { name: 'Astro',             note: 'This site runs on it' },
       { name: 'MCP Servers',        note: 'Model Context Protocol' },
       { name: 'Headless Arch',      note: 'Composable CMS' },

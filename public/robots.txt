@@ -1,4 +1,62 @@
+Sitemap: https://caseyhsu.com/sitemap-index.xml
+
+# Search engines, link-preview fetchers, and everyone else: full access.
 User-agent: *
 Disallow:
 
-Sitemap: https://caseyhsu.com/sitemap-index.xml
+# ---------------------------------------------------------------------
+# AI crawlers: not allowed.
+# robots.txt is a request, not enforcement. Compliant operators honour
+# it; some (notably Bytespider) have been reported ignoring it.
+# ---------------------------------------------------------------------
+
+# OpenAI
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Anthropic
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: anthropic-ai
+Disallow: /
+
+# Google and Apple AI opt-out tokens.
+# These are not crawlers. Blocking them opts out of Gemini and Apple
+# Intelligence training without affecting Google Search or Siri/Spotlight.
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Disallow: /
+
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Disallow: /
+
+# Common Crawl — feeds many third-party training sets
+User-agent: CCBot
+Disallow: /
+
+# Meta. Note: facebookexternalhit is intentionally NOT blocked above,
+# so shared links keep their preview cards.
+User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
+User-agent: FacebookBot
+Disallow: /
+
+# Everyone else
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: cohere-ai
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: YouBot
+User-agent: AI2Bot
+User-agent: Diffbot
+User-agent: ImagesiftBot
+User-agent: Omgilibot
+User-agent: Timpibot
+User-agent: Webzio-Extended
+Disallow: /
