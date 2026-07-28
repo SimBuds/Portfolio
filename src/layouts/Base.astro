@@ -18,9 +18,31 @@ const personSchema = {
   '@type': 'Person',
   name: SITE.name,
   url: SITE.url,
-  jobTitle: 'Full-Stack Developer (CMS & E-commerce)',
+  image: ogImage,
+  jobTitle: 'Full-Stack Developer (CMS & AI Automation)',
+  description: SITE.description,
   email: `mailto:${SITE.email}`,
-  address: { '@type': 'PostalAddress', addressLocality: SITE.location },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Toronto',
+    addressRegion: 'ON',
+    addressCountry: 'CA',
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'George Brown Polytechnic',
+  },
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    name: 'Contentful Certified Professional',
+    credentialCategory: 'certification',
+    recognizedBy: { '@type': 'Organization', name: 'Contentful' },
+  },
+  knowsAbout: [
+    'Shopify', 'Liquid', 'HubSpot CMS', 'HubL', 'WordPress', 'Contentful',
+    'TypeScript', 'React', 'Node.js', 'Python', 'Astro',
+    'Technical SEO', 'Core Web Vitals', 'Large Language Models', 'Ollama', 'Claude API',
+  ],
   sameAs: [`https://${SITE.github}`, `https://${SITE.linkedin}`],
 };
 ---
