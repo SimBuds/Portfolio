@@ -6,9 +6,10 @@ export const STACK: StackGroup[] = [
     label: 'Core',
     items: [
       { name: 'JavaScript · TypeScript', note: 'ES6+ · typed' },
-      { name: 'React · Next.js', note: 'UI · SSR' },
+      { name: 'React · Next.js', note: 'UI · SSR · Redux' },
       { name: 'Node.js · Express', note: 'REST APIs' },
       { name: 'Python', note: 'Automation · AI tooling' },
+      { name: 'PHP · Sass', note: 'WordPress · styling' },
     ],
   },
   {
@@ -25,6 +26,7 @@ export const STACK: StackGroup[] = [
     items: [
       { name: 'Ollama',          note: 'KV cache · flash attn' },
       { name: 'Claude API',      note: 'Agents · structured output' },
+      { name: 'Model Context Protocol', note: 'Tool servers' },
       { name: 'Claude Code CLI', note: 'Daily driver' },
       { name: 'FastAPI',         note: 'Project backends' },
       { name: 'OpenAI Codex',    note: 'Inline assist' },
@@ -59,7 +61,6 @@ export const STACK: StackGroup[] = [
       { name: 'Angular',           note: 'Coursework · light use' },
       { name: 'React Native',      note: 'Capstone mobile app' },
       { name: 'Astro',             note: 'This site runs on it' },
-      { name: 'MCP Servers',        note: 'Model Context Protocol' },
       { name: 'Headless Arch',      note: 'Composable CMS' },
       { name: 'Figma',              note: 'Design handoff' },
       { name: 'Agile / Scrum',      note: 'Process' },
