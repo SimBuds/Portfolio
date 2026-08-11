@@ -51,7 +51,7 @@ export const STACK: StackGroup[] = [
       { name: 'GitHub Actions',     note: 'CI/CD' },
       { name: 'Jest · Playwright',  note: 'Unit · E2E tests' },
       { name: 'AWS · Azure',        note: 'Cloud services' },
-      { name: 'nginx · DigitalOcean', note: 'Self-hosted deploys' },
+      { name: 'nginx · AWS Lightsail', note: 'Self-hosted deploys' },
     ],
   },
   {
