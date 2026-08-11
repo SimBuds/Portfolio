@@ -3,12 +3,16 @@
 # Manual deploy from the workstation. Mirrors .github/workflows/deploy.yml --
 # use it when CI is unavailable or you want to ship without pushing to main.
 #
+#   deploy/deploy.sh
+#   deploy/deploy.sh --rollback
+#
+# Override any of the settings below via the environment, e.g.
 #   DEPLOY_HOST=1.2.3.4 deploy/deploy.sh
-#   DEPLOY_HOST=1.2.3.4 deploy/deploy.sh --rollback
 #
 set -euo pipefail
 
-DEPLOY_HOST="${DEPLOY_HOST:?set DEPLOY_HOST=15.157.115.109}"
+# Lightsail static IP (ca-central-1a). Public by definition, not a secret.
+DEPLOY_HOST="${DEPLOY_HOST:-15.157.115.109}"
 DEPLOY_USER="${DEPLOY_USER:-ubuntu}"
 DEPLOY_PATH="${DEPLOY_PATH:-/var/www/caseyhsu.com}"
 SSH_KEY="${SSH_KEY:-$HOME/.ssh/portfolio_deploy}"
@@ -55,9 +59,19 @@ RELEASE="$(date -u +%Y%m%d%H%M%S)-$(git rev-parse --short HEAD)$([[ -n "$(git st
 log "Uploading release ${RELEASE}"
 
 "${SSH[@]}" "mkdir -p '${DEPLOY_PATH}/releases/${RELEASE}'"
-rsync -az --delete --chmod=D755,F644 \
-  -e "ssh -i $SSH_KEY -o StrictHostKeyChecking=accept-new" \
-  dist/ "${TARGET}:${DEPLOY_PATH}/releases/${RELEASE}/"
+
+# Each release lands in a fresh empty directory, so tar-over-ssh is equivalent
+# to rsync --delete here. Falls back automatically when rsync is absent.
+if command -v rsync >/dev/null; then
+  rsync -az --delete --chmod=D755,F644 \
+    -e "ssh -i $SSH_KEY -o StrictHostKeyChecking=accept-new" \
+    dist/ "${TARGET}:${DEPLOY_PATH}/releases/${RELEASE}/"
+else
+  echo "  rsync not found, using tar over ssh"
+  tar -czf - -C dist . \
+    | "${SSH[@]}" "tar -xzf - -C '${DEPLOY_PATH}/releases/${RELEASE}' \
+        && chmod -R u=rwX,go=rX '${DEPLOY_PATH}/releases/${RELEASE}'"
+fi
 
 # ------------------------------------------------------------- activate -----
 log "Activating"

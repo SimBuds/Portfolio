@@ -21,6 +21,7 @@ DEPLOY_PUBKEY="${DEPLOY_PUBKEY:-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFINkAXZ4+If
 
 WEBROOT="/var/www/${DOMAIN}"
 SNIPPET="/etc/nginx/snippets/${DOMAIN}-common.conf"
+HEADERS="/etc/nginx/snippets/${DOMAIN}-headers.conf"
 SITE="/etc/nginx/sites-available/${DOMAIN}"
 
 log()  { printf '\n\033[1;36m==>\033[0m %s\n' "$*"; }
@@ -33,6 +34,9 @@ id "$DEPLOY_USER" &>/dev/null || die "deploy user '$DEPLOY_USER' does not exist"
 # ---------------------------------------------------------------- packages ---
 log "Updating system packages"
 export DEBIAN_FRONTEND=noninteractive
+# Ubuntu 24.04 ships needrestart, which otherwise opens an interactive
+# service-restart prompt mid-upgrade and hangs a scripted run.
+export NEEDRESTART_MODE=a NEEDRESTART_SUSPEND=1
 apt-get update -qq
 apt-get upgrade -y -qq
 
@@ -107,44 +111,54 @@ chmod 755 /var/www "$WEBROOT"
 # the server block for :443 without us losing caching/security config.
 log "Writing nginx config"
 mkdir -p /etc/nginx/snippets
+# nginx drops every inherited add_header as soon as a location declares one of
+# its own, so these are included into each location rather than set once.
+cat > "$HEADERS" <<'NGINX'
+# Managed by deploy/bootstrap.sh -- edits will be overwritten.
+add_header X-Content-Type-Options    "nosniff" always;
+add_header X-Frame-Options           "SAMEORIGIN" always;
+add_header Referrer-Policy           "strict-origin-when-cross-origin" always;
+add_header Permissions-Policy        "geolocation=(), microphone=(), camera=()" always;
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+NGINX
+
 cat > "$SNIPPET" <<NGINX
 # Managed by deploy/bootstrap.sh -- edits will be overwritten.
 
 root ${WEBROOT}/current;
 index index.html;
+include ${HEADERS};
 
 # Astro emits a static tree: exact file, then directory index, then .html.
+# Cache-Control lives here because a bare "/" never matches an \.html\$ regex.
 location / {
     try_files \$uri \$uri/index.html \$uri.html =404;
+    include ${HEADERS};
+    add_header Cache-Control "public, max-age=0, must-revalidate" always;
 }
 
 error_page 404 /404.html;
-location = /404.html { internal; }
+location = /404.html {
+    internal;
+    include ${HEADERS};
+    add_header Cache-Control "public, max-age=0, must-revalidate" always;
+}
 
 # Content-hashed assets never change under a given name. ^~ so this wins over
 # the extension regex below, which would otherwise capture fonts and images.
 location ^~ /_astro/ {
     access_log off;
+    include ${HEADERS};
     add_header Cache-Control "public, max-age=31536000, immutable" always;
     try_files \$uri =404;
 }
 
 location ~* \.(?:jpg|jpeg|png|gif|webp|avif|svg|ico|woff2?)\$ {
     access_log off;
+    include ${HEADERS};
     add_header Cache-Control "public, max-age=2592000" always;
     try_files \$uri =404;
 }
-
-# HTML must revalidate so a deploy is visible immediately.
-location ~* \.html\$ {
-    add_header Cache-Control "public, max-age=0, must-revalidate" always;
-}
-
-add_header X-Content-Type-Options    "nosniff" always;
-add_header X-Frame-Options           "SAMEORIGIN" always;
-add_header Referrer-Policy           "strict-origin-when-cross-origin" always;
-add_header Permissions-Policy        "geolocation=(), microphone=(), camera=()" always;
-add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
 gzip              on;
 gzip_vary         on;
@@ -200,8 +214,12 @@ log "Checking DNS against this host (${SERVER_IP:-unknown} / ${SERVER_IP6:-no ip
 
 CERT_DOMAINS=()
 for d in "$DOMAIN" "www.${DOMAIN}"; do
-  a="$(dig +short A "$d" | tail -n1)"
-  aaaa="$(dig +short AAAA "$d" | tail -n1)"
+  # dig +short prints the full CNAME chain, so filter to address literals --
+  # otherwise a CNAME target gets compared against an IP and never matches.
+  # The trailing `|| true` matters: grep exits 1 on no match, and under
+  # `set -o pipefail` that would abort the script on any domain lacking AAAA.
+  a="$(dig +short A "$d"       | grep -E '^[0-9]+(\.[0-9]+){3}$'         | tail -n1 || true)"
+  aaaa="$(dig +short AAAA "$d" | grep -E '^[0-9a-fA-F:]*:[0-9a-fA-F:]*$' | tail -n1 || true)"
 
   # This instance is dual-stack: Let's Encrypt prefers AAAA when one exists,
   # so a stale AAAA record fails validation even with a correct A record.
@@ -225,9 +243,17 @@ else
   log "Requesting Let's Encrypt certificate"
   certbot --nginx "${CERT_DOMAINS[@]}" \
     --non-interactive --agree-tos -m "$EMAIL" \
-    --redirect --keep-until-expiring
+    --redirect --keep-until-expiring --expand
   systemctl enable --now certbot.timer
   systemctl list-timers certbot.timer --no-pager || true
+
+  # certbot writes a plain `listen 443 ssl;`. nginx 1.24 has no `http2 on;`
+  # directive (added in 1.25.1), so HTTP/2 must go on the listen line itself.
+  if ! grep -qE 'listen .*443 ssl.*http2' "$SITE"; then
+    log "Enabling HTTP/2"
+    sed -i -E 's/(listen (\[::\]:)?443 ssl)(;)/\1 http2\3/' "$SITE"
+  fi
+
   nginx -t && systemctl reload nginx
 fi
 
