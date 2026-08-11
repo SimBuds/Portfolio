@@ -8,7 +8,7 @@
 #
 set -euo pipefail
 
-DEPLOY_HOST="${DEPLOY_HOST:?set DEPLOY_HOST=<static ip or hostname>}"
+DEPLOY_HOST="${DEPLOY_HOST:?set DEPLOY_HOST=15.157.115.109}"
 DEPLOY_USER="${DEPLOY_USER:-ubuntu}"
 DEPLOY_PATH="${DEPLOY_PATH:-/var/www/caseyhsu.com}"
 SSH_KEY="${SSH_KEY:-$HOME/.ssh/portfolio_deploy}"
