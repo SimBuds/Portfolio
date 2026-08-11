@@ -5,9 +5,21 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Never let two deploys interleave on the box.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  # Base path on the server; must match WEBROOT in deploy/bootstrap.sh.
+  DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+  KEEP_RELEASES: 5
+  SITE_URL: https://caseyhsu.com
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -20,15 +32,49 @@ jobs:
 
       - run: npm run build
 
+      - name: Verify build output
+        run: |
+          test -f dist/index.html || { echo "::error::dist/index.html missing"; exit 1; }
+          echo "Built $(find dist -type f | wc -l) files, $(du -sh dist | cut -f1)"
+
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Rsync dist to droplet
+      - name: Upload release
         run: |
-          rsync -az --delete \
+          RELEASE="$(date -u +%Y%m%d%H%M%S)-${GITHUB_SHA::7}"
+          echo "RELEASE=$RELEASE" >> "$GITHUB_ENV"
+          TARGET="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+
+          ssh -i ~/.ssh/id_ed25519 "$TARGET" \
+            "mkdir -p '${DEPLOY_PATH}/releases/${RELEASE}'"
+
+          rsync -az --delete --chmod=D755,F644 \
             -e "ssh -i ~/.ssh/id_ed25519" \
-            dist/ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}"
+            dist/ "${TARGET}:${DEPLOY_PATH}/releases/${RELEASE}/"
+
+      - name: Activate release
+        run: |
+          TARGET="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+          ssh -i ~/.ssh/id_ed25519 "$TARGET" bash -euo pipefail <<EOF
+            cd '${DEPLOY_PATH}'
+            test -f "releases/${RELEASE}/index.html"
+
+            # Symlink swap is atomic: no request ever sees a partial tree.
+            ln -sfn "${DEPLOY_PATH}/releases/${RELEASE}" "${DEPLOY_PATH}/current.tmp"
+            mv -Tf "${DEPLOY_PATH}/current.tmp" "${DEPLOY_PATH}/current"
+
+            ls -1dt releases/*/ | tail -n +$((KEEP_RELEASES + 1)) | xargs -r rm -rf
+            echo "Active: \$(readlink current)"
+          EOF
+
+      - name: Health check
+        continue-on-error: true
+        run: |
+          curl -fsSL --retry 3 --retry-delay 5 -o /dev/null \
+            -w 'HTTP %{http_code} in %{time_total}s via %{scheme}\n' \
+            "$SITE_URL/"
