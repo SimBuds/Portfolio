@@ -12,37 +12,37 @@ export const NOW: NowItem[] = [
   {
     cmd: '~/Jobhunt',
     title: 'Jobhunt - local-first AI job-search CLI',
-    note: 'Aggregates nine public ATS APIs, scores roles against a verified profile with a local LLM, and drafts tailored docs with no-fabrication checks. I review and submit every application myself.',
-    tags: ['Python', 'asyncio', 'Ollama', 'SQLite', 'Playwright', 'mypy'],
+    note: 'Six stages over one SQLite database, every model call schema-bounded and local. The tool fills the application form. I click Submit.',
+    tags: ['Python', 'asyncio', 'llama.cpp', 'SQLite', 'Playwright', 'mypy'],
     status: 'daily use',
-    body: 'Nine ATS sources (Greenhouse, Lever, Ashby, Workday, SmartRecruiters, Workable, Recruitee, Adzuna, Job Bank Canada) run concurrently over async HTTP with per-source rate limits, against durable SQLite state with versioned migrations. Fit scoring, resume tailoring, and cover letters run on a quantized model through Ollama with schema-constrained JSON; deterministic post-decode checks reject any claim not present in a verified profile snapshot. Roughly 700 tests, Ruff, and strict mypy gate every change.',
+    body: 'Ingest, discover, score, tailor, audit, and autofill each run as their own command against durable SQLite state, so any stage re-runs without repeating the ones before it. Nine ATS integrations plus RSS pull concurrently over async HTTP with per-host rate limits. One gateway is the only place the model is reached, through a local llama.cpp router with a JSON schema on every call. Honesty is structural rather than prompted: generation reads from a verified profile snapshot, post-decode invariants reject any claim it cannot source, and the score is computed from verified requirements instead of chosen by the model. The audit path has no LLM in it at all. 1210 tests, Ruff, and strict mypy gate every change.',
     repo: 'https://github.com/SimBuds/Jobhunt'
   },
   {
+    cmd: '~/Everything4Cats',
+    title: 'Everything4Cats - affiliate site on a self-managed Lightsail host',
+    note: 'A WordPress cat-products review site I own end to end: server, theme, plugins, and the technical SEO.',
+    tags: ['WordPress', 'PHP', 'AWS Lightsail', 'Docker', 'Bash', 'WP-CLI'],
+    status: 'pre-launch',
+    body: 'An OS-only Ubuntu instance turned into a working site by one idempotent provisioning script, with nginx, TLS, swap, and the plugin and theme baseline all read from files in the repo. A custom theme plus two plugins carry the post types, taxonomy, and the affiliate-disclosure and schema compliance layer. Docker is the test harness rather than the deployment target: it runs the provisioner twice against a throwaway image, because once proves it works and twice proves it is idempotent. A seedable staging site renders every template locally before a change reaches the live host.',
+    repo: 'https://everything4cats.ca'
+  },
+  {
     cmd: '~/Seo-llm',
-    title: 'SEO-LLM - content pipeline and Google safeguards',
-    note: 'Hybrid Claude Code + local-model SEO stack. Briefs with lint guards against 2026 core-update drift.',
-    tags: ['Claude Code', 'Ollama', 'Postgres', 'JSON-LD'],
-    status: 'designing',
-    body: 'Claude Code plans; lint checks banned words, heading hierarchy, meta length, and JSON-LD schema; Google Search Central RSS triggers rule reviews when a core update lands.',
+    title: 'SEO-LLM - Claude Code as the harness for a local content pipeline',
+    note: 'No standalone app. Skills replace the CLI, the Bash tool replaces the workflow engine, and files replace the database.',
+    tags: ['Claude Code', 'llama.cpp', 'Bash', 'jq', 'JSON Schema'],
+    status: 'in use',
+    body: 'A page moves from research to a finished article one approved stage at a time: fetch, keywords, brief, outline, draft, rewrite. Long articles are never produced in a single call, so drafting runs section by section with a fact-check pass and a separate rewrite pass over each part. The division of labour is deliberate: the local model does the volume work, and Claude Code reads what came back against the research and says what is wrong with it. Anything decidable by arithmetic or a lookup lives in a deterministic check script instead, because judgement encoded as a regex is wrong on real data. Fetching honours robots.txt with a per-host delay, and the last step is always a person moving the file.',
     repo: 'https://github.com/SimBuds/SEO-LLM'
   },
   {
-    cmd: '~/Auto-agent',
-    title: 'Auto-Agent - FastAPI + Claude API agent',
-    note: 'Plans against the Claude API with a FastAPI capability server, Postgres durable memory, and a Redis context cache.',
-    tags: ['FastAPI', 'Claude API', 'Postgres', 'Redis', 'Docker'],
-    status: 'building',
-    body: 'Claude API plans, Postgres holds durable memory, Redis caches context, and a typed FastAPI server bounds what the agent can actually do — actions are permission-scoped and recorded for review instead of run as unrestricted commands. Memory and task state survive restarts, so the agent resumes without losing its place. Runs continuously on Docker Compose on my own Arch Linux box.',
-    repo: 'https://github.com/SimBuds/Auto-Agent'
-  },
-  {
     cmd: '~/Local-LLM',
-    title: 'AI Context Stack - custom Ollama models from layered Markdown',
-    note: 'Qwen3.6 and Gemma4 builds generated from one shared prompts, memory, and knowledge tree.',
-    tags: ['Qwen3.6', 'Gemma4', 'Ollama', 'Modelfile'],
+    title: 'AI Context Stack - layered Markdown prompts on a llama.cpp router',
+    note: 'Three local models behind one router, with an eval suite so the which-model decision is measured rather than guessed.',
+    tags: ['llama.cpp', 'Qwen3.6', 'Gemma4', 'GGUF', 'systemd'],
     status: 'tuning',
-    body: 'Custom Ollama builds compiled from shared Markdown into generated system prompts and Modelfiles, with per-project overlays injected at request time. An eval suite scores candidate base models across content, coding, and learning tasks on output quality, generation speed, and VRAM use. Tuned around q5_0 KV cache, flash attention, and 16k context. No opaque training runs — every behavior change is version-controlled and reversible.',
+    body: 'A 26B and a 35B mixture-of-experts model plus a dense 9B are served by one llama-server router running as a systemd user service, keeping one model resident at a time inside a 10 GB VRAM budget by offloading expert layers to system RAM. Behavior comes from files, not fine-tuning: shared Markdown for memory and prompts is assembled into a system prompt and a router preset per model, then joined into the one config the server reads. Nothing is baked into the weights, so a client that sends no prompt gets the bare base model. An eval suite benchmarks each model on speed, coding, content, tool calling, and tutoring, graded by a leave-one-out judge panel so inter-judge disagreement is a real number.',
     repo: 'https://github.com/SimBuds/Local-LLM'
   },
 ];
