@@ -25,7 +25,7 @@ export const ABOUT: About = {
       html: 'The other half is <strong>applied AI</strong>: LLM content pipelines that keep human review in the loop, and agentic tooling on local inference (llama.cpp) and the Claude API. I run it in my own workflow every day, not as a demo.',
     },
     {
-      html: "I'm a <strong>Contentful Certified Professional</strong> (with the Personalization Skill Badge) and a <strong>George Brown</strong> Computer Programming and Analysis grad (Dean's List, all terms).",
+      html: "I'm a <strong>Contentful Certified Professional</strong> (with the Personalization Skill Badge) and hold an Advanced Diploma in Computer Programming and Analysis from <strong>George Brown</strong> (2021–2024, Dean's List, all terms).",
     },
     {
       html: 'Alongside all of it, I spent ten years as a <strong>sous chef</strong> and team lead running kitchens of 5-20: hiring, training, scheduling, food-cost budgeting. I kept that going through the diploma and my first dev contracts, wrapping up in late 2025. Calm under deadline comes standard.',

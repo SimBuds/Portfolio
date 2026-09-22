@@ -1,5 +1,8 @@
 # HIDE ME
-/node_modules
-/dist
-/.astro
+node_modules
+dist
+.astro
 IMPLEMENT.md
+MASTER-CASEY.md
+*.docx
+*txt

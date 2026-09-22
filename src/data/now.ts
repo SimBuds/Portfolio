@@ -24,7 +24,7 @@ export const NOW: NowItem[] = [
     note: 'A WordPress cat-products review site I own end to end: server, theme, plugins, and the technical SEO.',
     tags: ['WordPress', 'PHP', 'AWS Lightsail', 'Docker', 'Bash', 'WP-CLI'],
     status: 'pre-launch',
-    body: 'An OS-only Ubuntu instance turned into a working site by one idempotent provisioning script, with nginx, TLS, swap, and the plugin and theme baseline all read from files in the repo. A custom theme plus two plugins carry the post types, taxonomy, and the affiliate-disclosure and schema compliance layer. Docker is the test harness rather than the deployment target: it runs the provisioner twice against a throwaway image, because once proves it works and twice proves it is idempotent. A seedable staging site renders every template locally before a change reaches the live host.',
+    body: 'An OS-only Ubuntu instance turned into a working site by one idempotent provisioning script, with Apache, TLS, swap, and the plugin and theme baseline all read from files in the repo. A custom theme plus two plugins carry the post types, taxonomy, and the affiliate-disclosure and schema compliance layer. Docker is the test harness rather than the deployment target: it runs the provisioner twice against a throwaway image, because once proves it works and twice proves it is idempotent. A seedable staging site renders every template locally before a change reaches the live host.',
     repo: 'https://everything4cats.ca'
   },
   {

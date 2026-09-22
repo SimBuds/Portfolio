@@ -4,6 +4,11 @@
 - Displays my current portfolio with plans for the future xD
 - Live at https://caseyhsu.com
 
+[MASTER-CASEY.md](MASTER-CASEY.md) is the source of truth for every public claim
+across the four outlets: this site, the resumes in this repo's root, the
+`SimBuds` profile README, and LinkedIn. Correct a fact there first, then push it
+outward.
+
 ## Development
 
 ```bash

@@ -24,11 +24,10 @@ export const STACK: StackGroup[] = [
   {
     label: 'AI & Tooling',
     items: [
-      { name: 'Ollama',          note: 'KV cache · flash attn' },
+      { name: 'llama.cpp',       note: 'KV cache · flash attn' },
       { name: 'Claude API',      note: 'Agents · structured output' },
       { name: 'Model Context Protocol', note: 'Tool servers' },
       { name: 'Claude Code CLI', note: 'Daily driver' },
-      { name: 'FastAPI',         note: 'Project backends' },
       { name: 'OpenAI Codex',    note: 'Inline assist' },
     ],
   },
@@ -40,6 +39,8 @@ export const STACK: StackGroup[] = [
       { name: 'JSON-LD',         note: 'Structured data' },
       { name: 'Search Console',  note: 'Indexing · queries' },
       { name: 'GA4 · Google Ads', note: 'Traffic · campaigns' },
+      { name: 'Crawlability · canonicals', note: 'robots.txt' },
+      { name: 'Tag Manager · Lighthouse', note: 'Audits' },
     ],
   },
   {
