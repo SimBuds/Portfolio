@@ -218,13 +218,13 @@ body > * { position: relative; z-index: 1; }
 .stack-group { background: var(--bg-2); }
 .stack-group-head { display: flex; gap: 10px; align-items: baseline; padding: 14px 18px; border-bottom: 1px solid var(--line); color: var(--fg-3); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; font-family: 'Geist Mono', monospace; }
 .stack-group-head .label { color: var(--accent); }
-.stack-item { display: flex; justify-content: space-between; align-items: baseline; padding: 13px 18px; border-bottom: 1px solid var(--line); gap: 8px; transition: background 0.2s; }
+.stack-item { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; padding: 13px 18px; border-bottom: 1px solid var(--line); gap: 2px 8px; transition: background 0.2s; }
 .stack-item:hover { background: rgba(255,255,255,0.02); }
 .stack-item:hover .name { color: var(--accent); }
 .stack-list { list-style: none; padding: 0; margin: 0; }
 .stack-item:last-child { border-bottom: none; }
 .stack-item .name { color: var(--fg); font-size: 15px; white-space: nowrap; }
-.stack-item .note { color: var(--fg-3); font-size: 11px; letter-spacing: 0.02em; font-family: 'Geist Mono', monospace; text-align: right; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.stack-item .note { color: var(--fg-3); font-size: 11px; letter-spacing: 0.02em; font-family: 'Geist Mono', monospace; text-align: right; margin-left: auto; white-space: nowrap; }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: stretch; }
@@ -298,6 +298,7 @@ body > * { position: relative; z-index: 1; }
   .hero-grid { gap: 40px; }
   .about-grid { gap: 40px; }
   .contact-grid { gap: 32px; }
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Responsive — mobile */
@@ -351,15 +352,15 @@ body > * { position: relative; z-index: 1; }
   .stats-strip .stat:nth-child(1), .stats-strip .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
   .stack-grid { grid-template-columns: 1fr; }
   .stack-item { text-align: left; }
-  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .contact-summary { grid-template-columns: 1fr; max-width: none; }
   .contact-summary > div + div { border-left: none; border-top: 1px solid var(--line); }
   .contact-lines { max-width: none; }
-  .contact-line { grid-template-columns: 32px 64px 1fr 20px; padding: 12px 14px; }
+  .contact-line { grid-template-columns: 32px 64px minmax(0, 1fr) 20px; padding: 12px 14px; }
   .contact-lines { align-items: stretch; }
   .contact-form,
   .contact-form-body { text-align: left; }
-  .contact-line .v { font-size: 13px; }
+  .contact-line .v { font-size: 13px; overflow-wrap: anywhere; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
   .footer-cols { display: grid; grid-template-columns: 1fr; gap: 22px; }
   .footer-cols > div { display: block; }
@@ -384,6 +385,11 @@ body > * { position: relative; z-index: 1; }
   .stats-strip .stat:last-child { border-bottom: none; }
   .hero h1 { font-size: clamp(32px, 9vw, 48px); }
   .big-title h2 { font-size: clamp(28px, 8vw, 40px); }
+  .work-meta { flex-direction: column; gap: 2px; }
+  .work-meta .sep { display: none; }
+  /* The icon already names the channel, so the label is hidden visually but still read by screen readers. */
+  .contact-line { grid-template-columns: 32px minmax(0, 1fr) 20px; }
+  .contact-line .k { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }
 
 /* Reduced motion */

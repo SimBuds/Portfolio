@@ -5,4 +5,5 @@ dist
 IMPLEMENT.md
 MASTER-CASEY.md
 *.docx
-*txt
+# root-level text files only, so public/robots.txt can never be ignored
+/*.txt

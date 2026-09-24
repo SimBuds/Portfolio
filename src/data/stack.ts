@@ -26,7 +26,6 @@ export const STACK: StackGroup[] = [
     items: [
       { name: 'llama.cpp',       note: 'KV cache · flash attn' },
       { name: 'Claude API',      note: 'Agents · structured output' },
-      { name: 'Model Context Protocol', note: 'Tool servers' },
       { name: 'Claude Code CLI', note: 'Daily driver' },
       { name: 'OpenAI Codex',    note: 'Inline assist' },
     ],
@@ -60,6 +59,7 @@ export const STACK: StackGroup[] = [
     items: [
       { name: 'Java · Spring Boot', note: 'Coursework' },
       { name: 'Angular',           note: 'Coursework · light use' },
+      { name: 'Model Context Protocol', note: 'Light use' },
       { name: 'React Native',      note: 'Capstone mobile app' },
       { name: 'Astro',             note: 'This site runs on it' },
       { name: 'Headless Arch',      note: 'Composable CMS' },
