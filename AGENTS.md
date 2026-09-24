@@ -1263,3 +1263,22 @@ repos, and one ended in a colon with no template after it.)
   stale context size and layer counts long after the prose was fixed, because a
   prose grep does not read an SVG. Sweep generated and binary artifacts too.
   (Added 2026-09-22.)
+- **A grid column that must fit the screen is `minmax(0, 1fr)`, never plain
+  `1fr`.** Plain `1fr` lets its content set a minimum width, and at 880px and
+  below that pushed the contact section to 345px on a 320px screen, first in
+  `.contact-grid` and again one level down in `.contact-line`. The desktop rule
+  already used `minmax(0, 1fr)`, and the mobile override had regressed it.
+  (Added 2026-09-24.)
+- **Stack notes wrap instead of truncating.** `.stack-item` wraps and the note
+  has no ellipsis, so a note that does not fit drops to its own line. The grid
+  is two columns from 881 to 1024px because three columns wrapped most rows
+  there. After adding or renaming a stack entry, check 320, 900 and 1025px,
+  since those widths are the tightest. (Added 2026-09-24 after 12 notes were
+  cut off at 900px.)
+- **Measure layout at an exact width, never a guessed one.** In Chrome's mobile
+  emulation an overflowing page widens `innerWidth` past the requested width,
+  and fixed elements such as `.statusbar` stretch with it, so they look like a
+  cause when they are only a symptom. Gate every measurement on
+  `document.documentElement.clientWidth` equalling the target width, and
+  compare against a non-mobile run before blaming a fixed element.
+  (Added 2026-09-24.)
