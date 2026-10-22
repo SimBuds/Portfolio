@@ -1258,17 +1258,17 @@ repos, and one ended in a colon with no template after it.)
      rules belong here and in PLAN.md or README.md, never in the universal
      body above. -->
 
-- **`MASTER-CASEY.md` is the source of truth for every public claim about
-  Casey**, across the four outlets: this site, the three lane resumes in the
-  repo root, the `SimBuds` profile README, and LinkedIn. Read it before
-  changing biographical copy, a metric, a project description, or a stack list
-  anywhere. Correct a fact there first, then push it outward. When it conflicts
-  with a running system, the running system wins and the file is corrected in
-  the same change. (Added 2026-09-22 after a full pass found the same facts
-  stale in different ways on all four outlets, including a retired project
-  still linked from a public profile and a runtime that had been replaced eight
-  days earlier.)
-- **The three lane resumes carry fewer projects than the site on purpose.**
+- **`~/Documents/Projects/Casey_Hsu_Resume.docx` is the source of truth for
+  every public claim about Casey's experience**, across the four outlets: this
+  site, `public/resume.pdf`, the `SimBuds` profile README, and LinkedIn. Read
+  it before changing biographical copy, a metric, a project description, or a
+  stack list anywhere. Casey edits the resume, and the other outlets follow
+  it. When it conflicts with a running system, the running system wins and
+  Casey is told, so the resume can be corrected. (Changed 2026-10-22:
+  `MASTER-CASEY.md` was retired and the resume became the source. Originally
+  added 2026-09-22 after a full pass found the same facts stale in different
+  ways on all four outlets.)
+- **The resume carries fewer projects than the site on purpose.**
   Resumes are one page and the site is the detailed account. A difference in
   depth between outlets is the information architecture working, not drift.
   (Added 2026-09-22.)

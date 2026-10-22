@@ -19,19 +19,19 @@ export const ABOUT: About = {
     'Building <span class="accent">Shopify, HubSpot and WordPress</span> sites since 2022, plus the AI tooling that cuts the content work.',
   paras: [
     {
-      html: "Most of my client work is in <strong>CMS</strong> and e-commerce: Shopify, HubSpot and WordPress. The day-to-day is custom themes, platform migrations, editor-friendly modules, technical SEO, QA, launches, and clean handoff — usually as sole developer and the client's direct point of contact.",
+      html: "Most of my client work is <strong>CMS</strong> and e-commerce: Shopify, HubSpot and WordPress. My day-to-day is custom themes, platform migrations, editor-friendly modules, technical SEO, QA, launches and handoff. I'm usually the sole developer and the client's direct contact.",
     },
     {
-      html: 'The other half is <strong>applied AI</strong>: LLM content pipelines that keep human review in the loop, and agentic tooling on local inference (llama.cpp) and Claude Code. I run it in my own workflow every day, not as a demo.',
+      html: "The other half is <strong>applied AI</strong>: LLM content pipelines with human review, and agentic tooling on local inference (llama.cpp) and Claude Code. I use it every day in my own work.",
     },
     {
-      html: "I'm a <strong>Contentful Certified Professional</strong> (with the Personalization Skill Badge) and hold an Advanced Diploma in Computer Programming and Analysis from <strong>George Brown</strong> (Sep 2021 – Apr 2024, Dean's List, all terms), where my Agile capstone built React and React Native front ends.",
+      html: "I'm a <strong>Contentful Certified Professional</strong> with the Personalization Skill Badge. I hold an Advanced Diploma in Computer Programming and Analysis from <strong>George Brown</strong> (Sep 2021 – Apr 2024, Dean's List, all terms), where my Agile capstone built React and React Native front ends.",
     },
     {
-      html: 'Alongside all of it, I spent ten years as a <strong>sous chef</strong> and team lead running kitchens of 5-20: hiring, training, scheduling, food-cost budgeting. I worked it full-time through the diploma and my part-time dev contracts, wrapping up in Nov 2024. Calm under deadline comes standard.',
+      html: "I also spent ten years as a <strong>sous chef</strong> and team lead, running kitchens of 5-20: hiring, training, scheduling and food-cost budgeting. I worked full-time through the diploma and my part-time dev contracts, until Nov 2024.",
     },
     {
-      html: 'Currently open to full-stack, CMS, e-commerce, and applied-AI roles in the Greater Toronto Area or remote within Canada: contract, hybrid, or on-site.',
+      html: "Open to full-stack, CMS, e-commerce and applied-AI roles in the Greater Toronto Area or remote in Canada: contract, hybrid or on-site.",
       muted: true,
     },
   ],
