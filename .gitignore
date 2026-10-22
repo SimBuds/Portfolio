@@ -7,3 +7,4 @@ MASTER-CASEY.md
 *.docx
 # root-level text files only, so public/robots.txt can never be ignored
 /*.txt
+CASEY-INTERESTS.md
