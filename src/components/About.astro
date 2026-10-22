@@ -16,7 +16,15 @@ import { ABOUT } from '../data/about';
     <div class="about-grid">
       <div class="about-photo reveal">
         <div class="about-photo-img">
-          <Image class="photo" src={aboutPhoto} alt="Casey Hsu portrait" width={1080} height={1620} />
+          <Image
+            class="photo"
+            src={aboutPhoto}
+            alt="Casey Hsu portrait"
+            width={1080}
+            height={1620}
+            widths={[480, 720, 1080]}
+            sizes="(max-width: 880px) calc(100vw - 40px), (max-width: 1360px) 45vw, 600px"
+          />
         </div>
       </div>
 
