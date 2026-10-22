@@ -78,7 +78,7 @@ const lines = [
     form.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         form.reset();
-        hint.textContent = 'Protected by a hidden spam check';
+        hint.textContent = 'Protected by spam check';
         submit.innerHTML = '<span>Send message</span><span class="k">→</span>';
         (document.activeElement as HTMLElement | null)?.blur();
       }

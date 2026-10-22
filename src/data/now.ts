@@ -29,7 +29,7 @@ export const NOW: NowItem[] = [
     repo: 'https://everything4cats.ca'
   },
   {
-    cmd: '~/Seo-llm',
+    cmd: '~/SEO-LLM',
     title: 'SEO-LLM - Claude Code as the harness for a local content pipeline',
     note: 'No standalone app. Skills replace the CLI, the Bash tool the workflow engine, and files the database.',
     tags: ['Claude Code', 'llama.cpp', 'Bash', 'jq', 'JSON Schema'],

@@ -1295,3 +1295,8 @@ repos, and one ended in a colon with no template after it.)
   `document.documentElement.clientWidth` equalling the target width, and
   compare against a non-mobile run before blaming a fixed element.
   (Added 2026-09-24.)
+- **Headless Chrome will not render narrower than 500px.** A run with
+  `--window-size=320,...` silently measures at 500. Set the viewport with
+  `Emulation.setDeviceMetricsOverride` over the DevTools protocol instead, and
+  keep the clientWidth gate from the rule above. (Added 2026-10-22 after a
+  320px check measured at 500 and the gate caught it.)
