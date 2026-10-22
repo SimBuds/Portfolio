@@ -2,7 +2,7 @@
 import SectionHead from './SectionHead.astro';
 import { Image } from 'astro:assets';
 import { WORK } from '../data/work';
-import workJewelry from '../assets/work-jewelry.jpg';
+import workJewelry from '../assets/work-jewelry.png';
 import workTcg from '../assets/work-tcg.jpg';
 import workHubspot from '../assets/work-hubspot.jpg';
 
@@ -34,7 +34,6 @@ const WORK_IMAGES: Record<string, typeof workJewelry> = {
               src={WORK_IMAGES[p.slug]}
               alt={p.client}
               width={800}
-              height={500}
             />
             <div class="work-anno">
               <div class="top">{p.annotation}</div>

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../data/site';
+import { getImage } from 'astro:assets';
 import heroPhoto from '../assets/casey-hero.jpg';
 
 interface Props {
@@ -11,7 +12,9 @@ interface Props {
 const { title = SITE.title, description = SITE.description } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
-const ogImage = new URL(heroPhoto.src, SITE.url).toString();
+// Share cards want a small landscape JPEG. Cropped from the top so the head stays in frame.
+const ogPhoto = await getImage({ src: heroPhoto, width: 1200, height: 630, format: 'jpg', fit: 'cover', position: 'top' });
+const ogImage = new URL(ogPhoto.src, SITE.url).toString();
 
 const personSchema = {
   '@context': 'https://schema.org',

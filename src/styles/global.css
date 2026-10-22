@@ -188,7 +188,7 @@ body > * { position: relative; z-index: 1; }
 .work-card:hover .work-text h3 { color: var(--accent); }
 .work-text h3 { transition: color 0.2s; }
 .work-visual { position: relative; border-right: 1px solid var(--line); background: var(--bg-3); overflow: hidden; width: 100%; min-height: 180px; align-self: stretch; }
-.work-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.12); transform-origin: center; transition: transform 0.4s ease; }
+.work-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transform-origin: top center; transition: transform 0.4s ease; }
 .work-card:hover .work-visual img { transform: scale(1.18); }
 .work-anno { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,12,14,0.7), rgba(11,12,14,0.92)); display: flex; flex-direction: column; justify-content: space-between; padding: 20px; opacity: 0; transition: opacity 0.25s ease; pointer-events: none; font-family: 'Geist Mono', monospace; }
 .work-card:hover .work-anno { opacity: 1; }
