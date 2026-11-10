@@ -1142,3 +1142,7 @@ repos, and one ended in a colon with no template after it.)
   `Emulation.setDeviceMetricsOverride` over the DevTools protocol instead, and
   keep the clientWidth gate from the rule above. (Added 2026-10-22 after a
   320px check measured at 500 and the gate caught it.)
+- **Run layout checks with `mobile: true` in
+  `Emulation.setDeviceMetricsOverride`.** With `mobile: false` the scrollbar
+  takes 15px, so `clientWidth` is 305 at a 320 target and the gate fails on
+  every width. (Added 2026-11-10.)

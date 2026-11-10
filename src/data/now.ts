@@ -5,7 +5,6 @@ export type NowItem = {
   tags: string[];
   status: string;
   body: string;
-  /** Omitted for private repos, so the card renders without a link. */
   repo?: string;
 };
 
@@ -53,5 +52,6 @@ export const NOW: NowItem[] = [
     tags: ['Hermes Agent', 'QEMU', 'llama.cpp', 'Python', 'Bash'],
     status: 'on demand',
     body: 'Hermes Agent (Nous Research) runs in a Debian virtual machine and uses the Local-LLM router on the host, so nothing leaves the machine. It runs two jobs on demand: a topic scout that ranks article ideas for Everything4Cats, and a news digest that rates each item against a written interest profile. Tested scripts handle collecting and recording, so the agent only does the judgment. Each run writes one file and publishes nothing. A person decides what happens next.',
+    repo: 'https://github.com/SimBuds/Auto-Agent'
   },
 ];
