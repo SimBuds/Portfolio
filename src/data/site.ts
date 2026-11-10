@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Casey Hsu',
-  title: 'Casey Hsu - Full-Stack Developer | CMS & AI Automation',
-  description: 'Toronto full-stack developer building Shopify, HubSpot and WordPress sites since 2022, plus LLM content pipelines and AI automation tooling.',
+  title: 'Casey Hsu - Shopify and WordPress Developer | CMS, E-commerce & AI Automation',
+  description: 'Toronto Shopify and WordPress developer building Shopify, HubSpot and WordPress sites since 2022, plus LLM content pipelines and AI automation tooling.',
   url: 'https://caseyhsu.com',
   email: 'casey-hsu@outlook.com',
   github: 'github.com/SimBuds',

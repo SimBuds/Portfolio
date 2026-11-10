@@ -6,6 +6,7 @@ export const STACK: StackGroup[] = [
     label: 'Core',
     items: [
       { name: 'JavaScript · TypeScript', note: 'ES6+ · typed' },
+      { name: 'HTML · CSS', note: 'Semantic · responsive' },
       { name: 'React · Next.js', note: 'UI · SSR · Redux' },
       { name: 'Python', note: 'Automation · AI tooling' },
       { name: 'PHP · Sass', note: 'WordPress · styling' },
@@ -14,22 +15,24 @@ export const STACK: StackGroup[] = [
   {
     label: 'CMS & E-commerce',
     items: [
-      { name: 'Shopify',    note: 'Liquid · custom themes' },
-      { name: 'HubSpot',    note: 'HubL · themes · modules' },
+      { name: 'Shopify',    note: 'Liquid · OS 2.0 · Metafields' },
+      { name: 'HubSpot',    note: 'HubL · HubDB · modules' },
       { name: 'HubSpot CRM', note: 'Integration' },
-      { name: 'WordPress',  note: 'Elementor · migrations' },
-      { name: 'WP-CLI',     note: 'Backups · updates' },
+      { name: 'WordPress',  note: 'Elementor Pro · ACF' },
+      { name: 'WP-CLI · WP Engine', note: 'Backups · updates' },
       { name: 'Contentful', note: 'Certified Professional' },
     ],
   },
   {
     label: 'AI & Tooling',
     items: [
-      { name: 'llama.cpp',       note: 'KV cache · flash attn' },
+      { name: 'Local LLMs',      note: 'llama.cpp · KV cache' },
       { name: 'Claude Code CLI', note: 'Daily driver' },
       { name: 'OpenAI Codex',    note: 'Inline assist' },
       { name: 'Cursor',          note: 'Agent mode · editor' },
       { name: 'AI agents',       note: 'Hermes Agent' },
+      { name: 'Prompt engineering', note: 'Layered prompts' },
+      { name: 'LLM evals',       note: 'Judge panels' },
     ],
   },
   {
@@ -39,7 +42,8 @@ export const STACK: StackGroup[] = [
       { name: 'Core Web Vitals', note: 'LCP · CLS · INP' },
       { name: 'JSON-LD',         note: 'Structured data' },
       { name: 'Search Console',  note: 'Indexing · queries' },
-      { name: 'GA4',             note: 'Traffic · events' },
+      { name: 'GA4 · GTM',       note: 'Traffic · events' },
+      { name: 'A/B testing',     note: 'Experiments' },
       { name: 'Crawlability · canonicals', note: 'robots.txt' },
       { name: 'Lighthouse',      note: 'Audits' },
       { name: 'WCAG 2.1 AA',     note: 'Accessibility' },
@@ -56,16 +60,11 @@ export const STACK: StackGroup[] = [
     ],
   },
   {
-    label: 'Familiar',
+    label: 'Workflow',
     items: [
-      { name: 'Java · Spring Boot', note: 'Coursework' },
-      { name: 'Angular',           note: 'Coursework · light use' },
-      { name: 'Model Context Protocol', note: 'Light use' },
-      { name: 'React Native',      note: 'Capstone mobile app' },
-      { name: 'Astro',             note: 'This site runs on it' },
-      { name: 'Headless Arch',      note: 'Composable CMS' },
-      { name: 'Figma',              note: 'Design handoff' },
-      { name: 'Agile / Scrum',      note: 'Process' },
+      { name: 'Git',   note: 'Version control' },
+      { name: 'Jira',  note: 'Tickets · sprints' },
+      { name: 'Figma', note: 'Design handoff' },
     ],
   },
 ];
