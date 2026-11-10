@@ -15,7 +15,7 @@ export const NOW: NowItem[] = [
     note: 'Six stages, one SQLite database, and every model call local and schema-bounded. It fills the application form. I click Submit.',
     tags: ['Python', 'asyncio', 'llama.cpp', 'SQLite', 'Playwright', 'mypy'],
     status: 'maintained',
-    body: 'Ingest, discover, score, tailor, audit and autofill are separate commands over durable SQLite state, so any stage re-runs on its own. Nine ATS integrations and RSS pull concurrently over async HTTP with per-host rate limits. One gateway sends every model call to a local llama.cpp router, each with a JSON schema. Generation reads a verified profile snapshot, post-decode invariants reject any claim it cannot source, and the score is computed from verified requirements, not by the model. The audit path uses no LLM. 1210 tests, Ruff and strict mypy gate every change.',
+    body: 'Ingest, discover, score, tailor, audit and autofill are separate commands over durable SQLite state, so any stage re-runs on its own. Nine ATS integrations and RSS pull concurrently over async HTTP with per-host rate limits. One gateway sends every model call to a local llama.cpp router, each with a JSON schema. Generation reads a verified profile snapshot, post-decode invariants reject any claim it cannot source, and the score is computed from verified requirements, not by the model. The audit path uses no LLM. 1,400+ tests, Ruff and strict mypy gate every change.',
     repo: 'https://github.com/SimBuds/Jobhunt'
   },
   {

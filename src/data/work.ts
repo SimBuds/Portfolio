@@ -26,8 +26,8 @@ export const WORK: WorkItem[] = [
     title: 'Marketplace-standard HubSpot theme with 22 reusable modules',
     dates: 'Jan 2026 – Apr 2026',
     role: 'HubSpot CMS Developer (Contract)',
-    summary: "First website for a new AI company, built from the in-house team's Figma designs. I built a Marketplace-standard HubSpot theme with 22 reusable modules and drag-and-drop templates for 10 pages, to WCAG 2.1 AA. It scored 95 for performance and 90 for accessibility in Lighthouse. Hero images load eagerly, below-the-fold images lazily, and every image is sized so the layout never shifts. I integrated HubSpot CRM and owned all HubSpot work through QA and peer code review with a second developer, who built the product dashboard. Every contract deliverable was met before the business paused the launch.",
-    stack: ['HubSpot', 'HubL', 'Figma', 'CRM', 'WCAG 2.1 AA'],
+    summary: "First website for a new AI company, built from the in-house team's Figma designs. I built a Marketplace-standard HubSpot theme with 22 reusable modules and drag-and-drop templates for 10 pages, to WCAG 2.1 AA. It scored 95 for performance and 90 for accessibility in Lighthouse. Hero images load eagerly, below-the-fold images lazily, and every image is sized so the layout never shifts. I owned all HubSpot work through QA and peer code review with a second developer, who built the product dashboard. Every contract deliverable was met before the business paused the launch.",
+    stack: ['HubSpot', 'HubL', 'Figma', 'WCAG 2.1 AA'],
     annotation: '// 22 modules · WCAG 2.1 AA · Marketplace standard',
   },
   {

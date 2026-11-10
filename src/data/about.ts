@@ -25,13 +25,13 @@ export const ABOUT: About = {
       html: "The other half is <strong>applied AI</strong>: LLM content pipelines with human review, and agentic tooling on local inference (llama.cpp) and Claude Code. I use it every day in my own work.",
     },
     {
-      html: "I'm a <strong>Contentful Certified Professional</strong> I hold an Advanced Diploma in Computer Programming and Analysis from <strong>George Brown Polytechnic</strong> (Sep 2021 – Apr 2024, Dean's List, all terms), where my Agile capstone built React and React Native front ends.",
+      html: "I'm a <strong>Contentful Certified Professional</strong>. I hold an Advanced Diploma in Computer Programming and Analysis from <strong>George Brown Polytechnic</strong> (Sep 2021 – Apr 2024, Dean's List, all terms), where my Agile capstone built React and React Native front ends.",
     },
     {
       html: "I also spent ten years as a <strong>sous chef</strong> and team lead, running kitchens of 5-20: hiring, training, scheduling and food-cost budgeting. I worked full-time through the diploma and my part-time dev contracts, until Nov 2024.",
     },
     {
-      html: "Open to full-stack, CMS, e-commerce and applied-AI roles in the Greater Toronto Area or remote in Canada: contract, hybrid or on-site.",
+      html: "Open to Shopify, WordPress, HubSpot CMS and AI automation roles, full-time or contract, in the Greater Toronto Area or remote in Canada.",
       muted: true,
     },
   ],

@@ -5,9 +5,8 @@ export const STACK: StackGroup[] = [
   {
     label: 'Core',
     items: [
-      { name: 'JavaScript · TypeScript', note: 'ES6+ · typed' },
+      { name: 'JavaScript', note: 'ES6+' },
       { name: 'HTML · CSS', note: 'Semantic · responsive' },
-      { name: 'React · Next.js', note: 'UI · SSR · Redux' },
       { name: 'Python', note: 'Automation · AI tooling' },
       { name: 'PHP · Sass', note: 'WordPress · styling' },
     ],
@@ -17,7 +16,6 @@ export const STACK: StackGroup[] = [
     items: [
       { name: 'Shopify',    note: 'Liquid · OS 2.0 · Metafields' },
       { name: 'HubSpot',    note: 'HubL · HubDB · modules' },
-      { name: 'HubSpot CRM', note: 'Integration' },
       { name: 'WordPress',  note: 'Elementor Pro · ACF' },
       { name: 'WP-CLI · WP Engine', note: 'Backups · updates' },
       { name: 'Contentful', note: 'Certified Professional' },
@@ -65,6 +63,13 @@ export const STACK: StackGroup[] = [
       { name: 'Git',   note: 'Version control' },
       { name: 'Jira',  note: 'Tickets · sprints' },
       { name: 'Figma', note: 'Design handoff' },
+    ],
+  },
+  {
+    label: 'Exposure',
+    items: [
+      { name: 'React',      note: 'School · portfolio' },
+      { name: 'TypeScript', note: 'Astro · this site' },
     ],
   },
 ];
